@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Carousel -->
-    <link
-      rel="stylesheet"
-      href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Custom StyleSheet -->
-    <link rel="stylesheet" href="styles.css" />
+  <!-- Carousel -->
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+  <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css" />
 
-    <title>Phone Shop</title>
-  </head>
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="styles.css" />
 
-  <body>
-    <!-- Header -->
-    <header id="header" class="header">
-      <div class="container">
-        <div class="navigation">
-          <nav class="nav">
-            <div class="nav__hamburger">
-              <svg>
-                <use xlink:href="./images/sprite.svg#icon-menu"></use>
-              </svg>
-            </div>
+  <title>Phone Shop</title>
+</head>
 
-            <div class="nav__logo">
-              <h2>PHONE</h2>
-            </div>
+<body>
+  <!-- Header -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="navigation">
+        <nav class="nav">
+          <div class="nav__hamburger">
+            <svg>
+              <use xlink:href="./images/sprite.svg#icon-menu"></use>
+            </svg>
+          </div>
 
-            <div class="nav__menu">
-              <div class="menu__top">
-                <span class="nav__category">PHONE</span>
-                <a href="#" class="close__toggle">
-                  <svg>
-                    <use xlink:href="./images/sprite.svg#icon-cross"></use>
-                  </svg>
-                </a>
-              </div>
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Home</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Products</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Blog</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#" class="nav__link">Contact</a>
-                </li>
-              </ul>
-            </div>
+          <div class="nav__logo">
+            <h2>PHONE</h2>
+          </div>
 
-            <div class="nav__icons">
-              <a href="#" class="icon__item">
-                <svg class="icon__user">
-                  <use xlink:href="./images/sprite.svg#icon-user"></use>
+          <div class="nav__menu">
+            <div class="menu__top">
+              <span class="nav__category">PHONE</span>
+              <a href="#" class="close__toggle">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-cross"></use>
                 </svg>
               </a>
-
-              <a href="#" class="icon__item">
-                <svg class="icon__search">
-                  <use xlink:href="./images/sprite.svg#icon-search"></use>
-                </svg>
-              </a>
-
-              <a href="#" class="icon__item">
-                <svg class="icon__cart">
-                  <use
-                    xlink:href="./images/sprite.svg#icon-shopping-basket"
-                  ></use>
-                </svg>
-                <span id="cart__total">0</span>
-              </a>
             </div>
-          </nav>
-        </div>
-      </div>
-
-      <div class="hero">
-        <div class="glide" id="glide_1">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <div class="hero__center">
-                  <div class="hero__left">
-                    <span class="">New Inspiration 2020</span>
-                    <h1 class="">PHONES MADE FOR YOU!</h1>
-                    <a href="#">SHOP NOW</a>
-                  </div>
-                  <div class="hero__right">
-                    <img
-                      class="banner_02"
-                      src="./images/banner_02.png"
-                      alt="banner2"
-                    />
-                  </div>
-                </div>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Home</a>
               </li>
-              <li class="glide__slide">
-                <div class="hero__center">
-                  <div class="hero__left">
-                    <span>New Inspiration 2020</span>
-                    <h1>PHONES MADE FOR YOU!</h1>
-                    <a href="#" class="hero__btn">SHOP NOW</a>
-                  </div>
-                  <div class="hero__right">
-                    <img
-                      class="banner_03"
-                      src="./images/banner_03.png"
-                      alt="banner2"
-                    />
-                  </div>
-                </div>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Products</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Blog</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Contact</a>
               </li>
             </ul>
           </div>
+
+          <div class="nav__icons">
+            <a href="#" class="icon__item">
+              <svg class="icon__user">
+                <use xlink:href="./images/sprite.svg#icon-user"></use>
+              </svg>
+            </a>
+
+            <a href="#" class="icon__item">
+              <svg class="icon__search">
+                <use xlink:href="./images/sprite.svg#icon-search"></use>
+              </svg>
+            </a>
+
+            <a href="#" class="icon__item">
+              <svg class="icon__cart">
+                <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
+              </svg>
+              <span id="cart__total">0</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="glide" id="glide_1">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="hero__center">
+                <div class="hero__left">
+                  <span class="">New Inspiration 2020</span>
+                  <h1 class="">PHONES MADE FOR YOU!</h1>
+                  <a href="#">SHOP NOW</a>
+                </div>
+                <div class="hero__right">
+                  <img class="banner_01" src="./images/banner_01.png" alt="banner2" />
+                </div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="hero__center">
+                <div class="hero__left">
+                  <span>New Inspiration 2020</span>
+                  <h1>PHONES MADE FOR YOU!</h1>
+                  <a href="#" class="hero__btn">SHOP NOW</a>
+                </div>
+                <div class="hero__right">
+                  <img class="banner_02" src="./images/banner_02.png" alt="banner2" />
+                </div>
+              </div>
+            </li>
+          </ul>
+
+
+
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+            <svg>
+              <use xlink:href="./images/sprite.svg#icon-arrow-left2"></use>
+            </svg>
+          </button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+            <svg>
+              <use xlink:href="./images/sprite.svg#icon-arrow-right2"></use>
+            </svg>
+          </button>
         </div>
       </div>
-    </header>
-    <!-- End Header -->
+    </div>
+  </header>
+  <!-- End Header -->
 
-    <!-- Main -->
-    <!-- End Main -->
+  <!-- Main -->
+  <!-- End Main -->
 
-    <!-- Footer -->
-    <!-- End Footer -->
+  <!-- Footer -->
+  <!-- End Footer -->
 
-    <!-- Glide Carousel -->
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+  <!-- Glide Carousel -->
+  <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 
-    <script>
-      new Glide("#glide_1", {
-        type: "carousel",
-        startAt: 0,
-        autoplay: 4000,
-        hoverpause: true,
-        perView: 1,
-        transition: 900,
-      }).mount();
-    </script>
+  <script>
+    new Glide("#glide_1", {
+      type: "carousel",
+      startAt: 0,
+      autoplay: 4000,
+      hoverpause: true,
+      perView: 1,
+      transition: 900,
+      animationDuration: 600,
+      animationTimingFunc: 'linear',
+    }).mount();
+  </script>
 
-    <!-- Custom JavaScript -->
-    <script src="./js//app.js"></script>
-  </body>
+  <!-- Custom JavaScript -->
+  <script src="./js//app.js"></script>
+</body>
+
 </html>

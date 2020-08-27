@@ -16,6 +16,8 @@ navClose.addEventListener("click", () => {
 /* 
 Glidejs Carousel
 */
+
+// Hero
 new Glide("#glide_1", {
   type: "carousel",
   startAt: 0,
@@ -23,5 +25,26 @@ new Glide("#glide_1", {
   hoverpause: true,
   perView: 1,
   animationDuration: 800,
-  animationTimingFunc: "ease-in-out",
+  animationTimingFunc: "linear",
+}).mount();
+
+// Latest Products
+new Glide("#glide_2", {
+  type: "carousel",
+  startAt: 0,
+  perView: 4,
+  rewin: false,
+  animationDuration: 800,
+  animationTimingFunc: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
+  breakpoints: {
+    1200: {
+      perView: 3,
+    },
+    768: {
+      perView: 2,
+    },
+    568: {
+      perView: 1,
+    },
+  },
 }).mount();

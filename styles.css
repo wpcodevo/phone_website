@@ -405,8 +405,9 @@ Collection
 }
 
 .collection__container {
-  width: 90%;
-  padding: 0 1.5rem;
+  max-width: 114rem;
+  width: 100%;
+  padding: 0 1.6rem;
   margin: 0 auto;
   display: flex;
   height: 100%;
@@ -418,8 +419,8 @@ Collection
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0 1.5rem;
-  flex: 0 0 50%;
+  padding: 1rem;
+  flex: 0 0 48%;
   height: 30rem;
   background-color: var(--primaryColor);
 }
@@ -482,7 +483,7 @@ Collection Media Query
 
 @media only screen and (max-width: 999px) {
   .collection__container {
-    width: 100%;
+    width: 80%;
     flex-direction: column;
     height: 65rem;
     /* margin: 0; */

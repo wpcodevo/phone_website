@@ -10,6 +10,7 @@ Reset
   --Orange: #e24647;
   --white: #fff;
   --grey: #959595;
+  --secondaryColor: #2b1f4d;
 }
 
 * {
@@ -413,6 +414,10 @@ Collection
 }
 
 .collection__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1.5rem;
   flex: 0 0 50%;
   height: 30rem;
   background-color: var(--primaryColor);
@@ -420,6 +425,52 @@ Collection
 
 .collection__box:not(:last-child) {
   margin-right: 1.6rem;
+}
+
+.img__container {
+  width: 25rem;
+  text-align: center;
+}
+
+.collection__box img.collection_01 {
+  width: 60%;
+}
+.collection__box img.collection_02 {
+  width: 75%;
+}
+
+.collection__content {
+  flex: 0 0 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection__content span {
+  color: var(--Black);
+}
+
+.collection__content h1 {
+  margin-top: 0.5rem;
+}
+
+.collection__content a:link,
+.collection__content a:visited {
+  font-weight: 700;
+  display: inline-block;
+  padding: 1rem 1.4rem;
+  margin-top: 1.3rem;
+  border-radius: 3rem;
+  border: 2px solid var(--secondaryColor);
+  color: var(--primaryColor);
+  background-color: var(--secondaryColor);
+  transition: all 0.3s ease-in-out;
+}
+
+.collection__content a:hover {
+  background-color: transparent;
+  color: var(--secondaryColor);
 }
 
 /*
@@ -430,10 +481,39 @@ Collection Media Query
 
 @media only screen and (max-width: 999px) {
   .collection__container {
+    width: 100%;
     flex-direction: column;
+    height: 65rem;
+    /* margin: 0; */
+  }
+
+  .collection__box {
+    width: 100%;
+    margin: 0 auto;
   }
 
   .collection__box:not(:last-child) {
-    margin-right: 0rem;
+    margin: 0 0 1.6rem 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .collection__container {
+    width: 100%;
+    height: 95rem;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    /* margin: 0; */
+  }
+
+  .collection__box {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .collection__content {
+    flex: 0 0 30%;
   }
 }

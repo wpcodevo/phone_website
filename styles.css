@@ -46,10 +46,10 @@ img {
 Header
 ======================
 */
-
+/* 
 .header {
-  height: 100vh;
-}
+  position: relative;
+} */
 
 .container {
   max-width: 117rem;
@@ -246,12 +246,14 @@ Hero Area
 ======================
 */
 
-.hero {
+/* .hero {
   background-color: var(--primaryColor);
   width: 100%;
-}
+} */
 
+.hero,
 .hero .glide__slides {
+  background-color: var(--primaryColor);
   width: 100%;
   height: 100vh;
 }
@@ -260,7 +262,6 @@ Hero Area
   background-color: #222;
   width: 1.2rem;
   height: 1.2rem;
-  /* padding: .2rem; */
 }
 
 .glide__arrow {
@@ -268,7 +269,7 @@ Hero Area
   opacity: 0;
   border: none;
   background-color: var(--grey);
-  transition: all .5s ease-in-out .2s;
+  transition: all 0.5s ease-in-out 0.2s;
 }
 
 .glide__arrow:hover {
@@ -318,6 +319,7 @@ Hero Area
 }
 
 .hero__left {
+  padding: 0 3rem;
   flex: 0 0 50%;
 }
 
@@ -359,8 +361,6 @@ Hero Area
   width: 70%;
 }
 
-
-
 /*
 ======================
 Hero Media Query
@@ -389,5 +389,51 @@ Hero Media Query
 
   .glide__arrows {
     display: none;
+  }
+}
+
+/*
+======================
+Collection
+======================
+*/
+
+.section {
+  padding: 3rem 0;
+}
+
+.collection__container {
+  width: 90%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collection__box {
+  flex: 0 0 50%;
+  height: 30rem;
+  background-color: var(--primaryColor);
+}
+
+.collection__box:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+/*
+======================
+Collection Media Query
+======================
+*/
+
+@media only screen and (max-width: 999px) {
+  .collection__container {
+    flex-direction: column;
+  }
+
+  .collection__box:not(:last-child) {
+    margin-right: 0rem;
   }
 }

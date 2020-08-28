@@ -1,3 +1,6 @@
+/*
+Sliders
+*/
 const slider1 = document.getElementById("glide_1");
 const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
@@ -23,8 +26,8 @@ navClose.addEventListener("click", () => {
 Glidejs Carousel
 */
 
+// Hero
 if (slider1) {
-  // Hero
   new Glide(slider1, {
     type: "carousel",
     startAt: 0,

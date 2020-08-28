@@ -529,11 +529,24 @@ Latest Products
   margin: 0 auto;
 }
 
+.title__container {
+  background-color: var(--primaryColor);
+  padding: 1rem 0;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
 .section__title {
-  padding-bottom: 6rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.section__title:hover .primary__title,
+.section__title:hover span.dot,
+.section__title:hover span.dot::before {
+  opacity: 1;
 }
 
 .section__title .primary__title {
@@ -547,6 +560,7 @@ span.dot {
   padding: 0.45rem;
   position: relative;
   border: 1px solid var(--Black);
+  cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -579,7 +593,6 @@ span.dot::before {
   display: flex;
   flex-direction: column;
   text-align: center;
-  border: 1px solid var(--primaryColor);
   width: 25rem;
 }
 
@@ -596,7 +609,6 @@ span.dot::before {
 
 .product__footer {
   padding: 1rem 0;
-  border-top: 1px solid var(--primaryColor);
 }
 
 .product__footer .rating {
@@ -618,13 +630,13 @@ span.dot::before {
 }
 
 .product__btn {
-  font-weight: 700;
   display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
   width: 100%;
   padding: 1.4rem 0;
   border: 1px solid var(--Black);
-  background-color: var(--Black);
-  color: var(--primaryColor);
+  color: var(--Black);
   cursor: pointer;
 }
 
@@ -633,13 +645,14 @@ span.dot::before {
 }
 
 .product__btn:hover {
-  background-color: transparent;
-  color: var(--Black);
+  background-color: var(--Black);
+  color: var(--primaryColor);
 }
 
 .lastest__products .glide__arrow {
   background-color: transparent;
   border: 1px solid var(--primaryColor);
+  outline: none;
   border-radius: 0px;
   box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0);
   top: -7%;

@@ -695,7 +695,8 @@ span.dot::before {
   color: var(--primaryColor);
 }
 
-.lastest__products .glide__arrow {
+.latest__products .glide__arrow,
+.related__products .glide__arrow {
   background-color: transparent;
   border: 1px solid var(--primaryColor);
   outline: none;
@@ -705,20 +706,24 @@ span.dot::before {
   left: 80%;
 }
 
-.lastest__products .glide__arrow:hover {
+.latest__products .glide__arrow:hover,
+.related__products .glide__arrow:hover {
   background-color: var(--Orange);
   border: 1px solid var(--primaryColor);
 }
 
-.lastest__products .glide__arrow--left {
+.latest__products .glide__arrow--left,
+.related__products .glide__arrow--left {
   left: 75%;
 }
 
-.lastest__products .glide__arrow--right {
+.latest__products .glide__arrow--right,
+.related__products .glide__arrow--right {
   right: 5%;
 }
 
-.lastest__products .glide__arrow svg {
+.latest__products .glide__arrow svg,
+.related__products .glide__arrow svg {
   width: 1.5rem;
   height: 1.5rem;
   fill: var(--grey);
@@ -740,21 +745,26 @@ Latest Products Media Query
     margin: 0 auto;
   }
 
-  .lastest__products .glide__arrow--left {
+  .latest__products .glide__arrow--left,
+  .related__products .glide__arrow--left {
     left: 73%;
   }
 
-  .lastest__products .glide__arrow--right {
+  .latest__products .glide__arrow--right,
+  .related__products .glide__arrow--right {
     right: 7%;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .lastest__products .glide__arrow--left {
+
+  .latest__products .glide__arrow--left,
+  .related__products .glide__arrow--left {
     left: 70%;
   }
 
-  .lastest__products .glide__arrow--right {
+  .latest__products .glide__arrow--right,
+  .related__products .glide__arrow--right {
     right: 7%;
   }
 }
@@ -773,11 +783,13 @@ Latest Products Media Query
     width: 50%;
   }
 
-  .lastest__products .glide__arrow--left {
+  .lastest__products .glide__arrow--left,
+  .related__products .glide__arrow--left {
     left: 65%;
   }
 
-  .lastest__products .glide__arrow--right {
+  .lastest__products .glide__arrow--right,
+  .related__products .glide__arrow--right {
     right: 10%;
   }
 }

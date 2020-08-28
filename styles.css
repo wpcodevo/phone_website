@@ -28,6 +28,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-weight: 400;
   font-family: "Archivo", sans-serif;
   color: var(--Black);
 }
@@ -657,11 +658,11 @@ span.dot::before {
   padding: 1rem 0;
 }
 
-.product__footer .rating {
+.rating {
   padding-bottom: 1rem;
 }
 
-.product__footer svg {
+.rating svg {
   width: 1.6rem;
   height: 1.6rem;
   fill: var(--yellow);

@@ -171,6 +171,42 @@ Navigation
   color: var(--primaryColor);
 }
 
+.page__title-area {
+  background-color: var(--primaryColor);
+}
+
+.page__title-container {
+  padding: 1rem;
+}
+
+.page__titles {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--grey2);
+}
+
+.page__titles a {
+  margin-right: 2rem;
+}
+
+.page__titles a svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: var(--grey2);
+}
+
+.page__title {
+  position: relative;
+}
+
+.page__title::before {
+  position: absolute;
+  content: "/";
+  top: 0;
+  left: -1rem;
+}
+
 /*
 ======================
 Navigation Media Query

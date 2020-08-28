@@ -421,10 +421,8 @@ Collection
 }
 
 .collection__container {
-  max-width: 114rem;
   width: 100%;
   padding: 0 1.6rem;
-  margin: 0 auto;
   display: flex;
   height: 100%;
   align-items: center;
@@ -611,7 +609,7 @@ span.dot::before {
 }
 
 .product__header {
-  height: 35rem;
+  height: 25rem;
   padding: 0.5rem 0;
   text-align: center;
 }

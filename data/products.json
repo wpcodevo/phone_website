@@ -4,175 +4,175 @@
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone1.jpeg",
             "price": 265,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 2,
             "title": "Apple iPhone 11",
             "image": "./images/products/iphone/iphone1.jpeg",
             "price": 300,
-            "category": "special"
+            "category": "Special Products"
         },
         {
             "id": 3,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone2.jpeg",
             "price": 265,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 4,
             "title": "Apple iPhone 11",
             "image": "./images/products/iphone/iphone2.jpeg",
             "price": 850,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 5,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone3.jpeg",
             "price": 250,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 6,
             "title": "Apple iPhone 11",
             "image": "./images/products/iphone/iphone3.jpeg",
             "price": 750,
-            "category": "feature"
+            "category": "Featured Products"
         },
         {
             "id": 7,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone4.jpeg",
             "price": 365,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 8,
             "title": "Apple iPhone 11",
             "image": "./images/products/iphone/iphone4.jpeg",
             "price": 290,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 9,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone5.jpeg",
             "price": 320,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 10,
             "title": "Apple iPhone 11 Pro",
             "image": "./images/products/iphone/iphone5.jpeg",
             "price": 385,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 11,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone6.jpeg",
             "price": 475,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 12,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone7.jpeg",
             "price": 850,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 13,
             "title": "Apple iPhone 11",
             "image": "./images/products/iphone/iphone6.jpeg",
             "price": 800,
-            "category": "trending"
+            "category": "Trending Products"
         },
         {
             "id": 14,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone7.jpeg",
             "price": 360,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 15,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone8.jpeg",
             "price": 305,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 16,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung6.jpeg",
             "price": 400,
-            "category": "special"
+            "category": "Special Products"
         },
         {
             "id": 17,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung5.jpeg",
             "price": 550,
-            "category": "trending"
+            "category": "Trending Products"
         },
         {
             "id": 18,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone9.jpeg",
             "price": 630,
-            "category": "latest"
+            "category": "Latest Products"
         },
         {
             "id": 19,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone10.jpeg",
             "price": 250,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 20,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung4.jpeg",
             "price": 270,
-            "category": "special"
+            "category": "Special Products"
         },
         {
             "id": 21,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone11.jpeg",
             "price": 700,
-            "category": "related"
+            "category": "Related Products"
         },
         {
             "id": 22,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung3.jpeg",
             "price": 460,
-            "category": "trending"
+            "category": "Trending Products"
         },
         {
             "id": 23,
             "title": "Sony WH-CH510",
             "image": "./images/products/headphone/headphone12.jpeg",
             "price": 600,
-            "category": "feature"
+            "category": "Featured Products"
         },
         {
             "id": 24,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung2.jpeg",
             "price": 500,
-            "category": "feature"
+            "category": "Featured Products"
         },
         {
             "id": 25,
             "title": "Samsung Galaxy M11",
             "image": "./images/products/sumsung/samsung1.jpeg",
             "price": 450,
-            "category": "special"
+            "category": "Special Products"
         }
 
     ]

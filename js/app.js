@@ -13,7 +13,7 @@ const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
 
 /*
-Filter Buttons
+Filte
 */
 const filterBtn = document.querySelectorAll(".filter-btn");
 
@@ -109,6 +109,23 @@ window.addEventListener("DOMContentLoaded", async function () {
   const products = await getProducts();
   displayProductItems(products);
 });
+
+//   const categoriesBtn = categories
+//     .map(categoryBtn => {
+//       let btn = `  <div class="section__titles category__titles">
+//               <div class="section__title filter-btn" data-id=${categoryBtn}>
+//                 <span class="dot"></span>
+//                 <h1 class="primary__title">${categoryBtn}</h1>
+//               </div>
+//             </div> `;
+
+//       return btn;
+//     })
+//     .join("");
+
+//   console.log(categoriesBtn);
+//   filterBtn.innerHTML = categoriesBtn;
+//
 
 const displayProductItems = items => {
   let displayProduct = items.map(

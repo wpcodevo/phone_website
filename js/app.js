@@ -107,10 +107,13 @@ const getProducts = async () => {
 // Load Products
 window.addEventListener("DOMContentLoaded", async function () {
   const products = await getProducts();
-  // displayProducts(products);
-  let displayProduct = products.map(
-    product => ` <li class="glide__slide">
-                  <div class="product">
+  displayProductItems(products);
+});
+
+const displayProductItems = items => {
+  let displayProduct = items.map(
+    product => ` 
+                  <div class="product category__products">
                     <div class="product__header">
                       <a href="#"><img src=${product.image} alt="product"></a>
                     </div>
@@ -134,31 +137,33 @@ window.addEventListener("DOMContentLoaded", async function () {
                         </svg>
                       </div>
                       <div class="product__price">
-                        <span>$${product.price}</span>
+                        <h4>$${product.price}</h4>
                       </div>
                       <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
                     </div>
                   </div>
-                </li>`
+                  `
   );
 
   displayProduct = displayProduct.join("");
-  console.log(displayProduct);
-});
+  categoryCenter.innerHTML = displayProduct;
+};
 
-// Products
-// const products = async () => {
-//   const products = await getProducts();
-//   const filteredProducts = products.filter(product => )
-// };
+Array.from(filterBtn).map(async btn => {
+  const products = await getProducts();
 
-// const displayProducts = props => {};
-
-// displayProduct = displayProduct.join("");
-// console.log(displayProduct);
-
-Array.from(filterBtn).map(btn => {
   btn.addEventListener("click", e => {
     const category = e.currentTarget.closest(".section__title").dataset.id;
+    let menuCategory = products.filter(product => {
+      if (product.category === category) {
+        return product;
+      }
+    });
+
+    if (category === "all") {
+      displayProductItems(products);
+    } else {
+      displayProductItems(menuCategory);
+    }
   });
 });

@@ -950,3 +950,14 @@ Product Details
 .product-details__btn .buy:hover svg {
   fill: var(--primaryColor);
 }
+
+/*
+======================
+Category Center
+======================
+*/
+.category__center {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}

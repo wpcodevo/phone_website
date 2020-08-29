@@ -1,3 +1,10 @@
+/* 
+Navigation
+*/
+const navOpen = document.querySelector(".nav__hamburger");
+const navClose = document.querySelector(".close__toggle");
+const menu = document.querySelector(".nav__menu");
+
 /*
 Sliders
 */
@@ -5,12 +12,13 @@ const slider1 = document.getElementById("glide_1");
 const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
 
-/* 
-Navigation
+/*
+Filter Buttons
 */
-const navOpen = document.querySelector(".nav__hamburger");
-const navClose = document.querySelector(".close__toggle");
-const menu = document.querySelector(".nav__menu");
+const filterBtn = document.querySelectorAll(".filter-btn");
+
+const productCenter = document.querySelector(".products-center");
+const categoryCenter = document.querySelector(".category__center");
 
 navOpen.addEventListener("click", () => {
   menu.classList.add("open");
@@ -83,3 +91,74 @@ if (slider3) {
     },
   }).mount();
 }
+
+// Get the Products
+const getProducts = async () => {
+  try {
+    const results = await fetch("/data/products.json");
+    const data = await results.json();
+    const products = data.products;
+    return products;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// Load Products
+window.addEventListener("DOMContentLoaded", async function () {
+  const products = await getProducts();
+  // displayProducts(products);
+  let displayProduct = products.map(
+    product => ` <li class="glide__slide">
+                  <div class="product">
+                    <div class="product__header">
+                      <a href="#"><img src=${product.image} alt="product"></a>
+                    </div>
+                    <div class="product__footer">
+                      <h3>${product.title}</h3>
+                      <div class="rating">
+                        <svg>
+                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                        </svg>
+                        <svg>
+                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                        </svg>
+                        <svg>
+                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                        </svg>
+                        <svg>
+                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                        </svg>
+                        <svg>
+                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                      </div>
+                      <div class="product__price">
+                        <span>$${product.price}</span>
+                      </div>
+                      <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
+                    </div>
+                  </div>
+                </li>`
+  );
+
+  displayProduct = displayProduct.join("");
+  console.log(displayProduct);
+});
+
+// Products
+// const products = async () => {
+//   const products = await getProducts();
+//   const filteredProducts = products.filter(product => )
+// };
+
+// const displayProducts = props => {};
+
+// displayProduct = displayProduct.join("");
+// console.log(displayProduct);
+
+Array.from(filterBtn).map(btn => {
+  btn.addEventListener("click", e => {
+    const category = e.currentTarget.closest(".section__title").dataset.id;
+  });
+});

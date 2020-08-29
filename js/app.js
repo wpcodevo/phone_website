@@ -13,12 +13,19 @@ const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
 
 /*
-Filte
+Filter
 */
 const filterBtn = document.querySelectorAll(".filter-btn");
 
 const productCenter = document.querySelector(".products-center");
 const categoryCenter = document.querySelector(".category__center");
+
+/*
+PopUp
+*/
+
+const popup = document.querySelector(".popup");
+const closePopup = document.querySelector(".popup__close");
 
 navOpen.addEventListener("click", () => {
   menu.classList.add("open");
@@ -151,37 +158,33 @@ const displayProductItems = items => {
 
 // Custom Filtering
 
-// Array.from(filterBtn).map(async btn => {
-//   const products = await getProducts();
+Array.from(filterBtn).map(async btn => {
+  const products = await getProducts();
 
-//   btn.addEventListener("click", e => {
-//     const category = e.currentTarget.closest(".section__title").dataset.id;
-//     let menuCategory = products.filter(product => {
-//       if (product.category === category) {
-//         return product;
-//       }
-//     });
-
-//     if (category === "all") {
-//       displayProductItems(products);
-//     } else {
-//       displayProductItems(menuCategory);
-//     }
-//   });
-// });
-
-// Isotope Filtering
-
-const iso = new Isotope(categoryCenter, {
-  itemSelector: ".category__products",
-  layoutMode: "fitRows",
-});
-
-// console.log(iso);
-
-Array.from(filterBtn).map(btn => {
   btn.addEventListener("click", e => {
     const category = e.currentTarget.closest(".section__title").dataset.id;
-    console.log(category);
+    let menuCategory = products.filter(product => {
+      if (product.category === category) {
+        return product;
+      }
+    });
+
+    if (category === "All Products") {
+      displayProductItems(products);
+    } else {
+      displayProductItems(menuCategory);
+    }
   });
+});
+
+// PopUp
+
+closePopup.addEventListener("click", () => {
+  popup.classList.add("hide__popup");
+});
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    popup.classList.remove("hide__popup");
+  }, 1000);
 });

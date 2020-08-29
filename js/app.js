@@ -110,23 +110,6 @@ window.addEventListener("DOMContentLoaded", async function () {
   displayProductItems(products);
 });
 
-//   const categoriesBtn = categories
-//     .map(categoryBtn => {
-//       let btn = `  <div class="section__titles category__titles">
-//               <div class="section__title filter-btn" data-id=${categoryBtn}>
-//                 <span class="dot"></span>
-//                 <h1 class="primary__title">${categoryBtn}</h1>
-//               </div>
-//             </div> `;
-
-//       return btn;
-//     })
-//     .join("");
-
-//   console.log(categoriesBtn);
-//   filterBtn.innerHTML = categoriesBtn;
-//
-
 const displayProductItems = items => {
   let displayProduct = items.map(
     product => ` 
@@ -166,21 +149,39 @@ const displayProductItems = items => {
   categoryCenter.innerHTML = displayProduct;
 };
 
-Array.from(filterBtn).map(async btn => {
-  const products = await getProducts();
+// Custom Filtering
 
+// Array.from(filterBtn).map(async btn => {
+//   const products = await getProducts();
+
+//   btn.addEventListener("click", e => {
+//     const category = e.currentTarget.closest(".section__title").dataset.id;
+//     let menuCategory = products.filter(product => {
+//       if (product.category === category) {
+//         return product;
+//       }
+//     });
+
+//     if (category === "all") {
+//       displayProductItems(products);
+//     } else {
+//       displayProductItems(menuCategory);
+//     }
+//   });
+// });
+
+// Isotope Filtering
+
+const iso = new Isotope(categoryCenter, {
+  itemSelector: ".category__products",
+  layoutMode: "fitRows",
+});
+
+// console.log(iso);
+
+Array.from(filterBtn).map(btn => {
   btn.addEventListener("click", e => {
     const category = e.currentTarget.closest(".section__title").dataset.id;
-    let menuCategory = products.filter(product => {
-      if (product.category === category) {
-        return product;
-      }
-    });
-
-    if (category === "all") {
-      displayProductItems(products);
-    } else {
-      displayProductItems(menuCategory);
-    }
+    console.log(category);
   });
 });

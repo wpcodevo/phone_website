@@ -186,5 +186,5 @@ closePopup.addEventListener("click", () => {
 window.addEventListener("load", () => {
   setTimeout(() => {
     popup.classList.remove("hide__popup");
-  }, 1000);
+  }, 500);
 });

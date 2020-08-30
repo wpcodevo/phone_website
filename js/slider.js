@@ -37,6 +37,7 @@ if (slider1) {
 Latest Products
 =============
  */
+
 if (slider2) {
   new Glide("#glide_2", {
     type: "carousel",

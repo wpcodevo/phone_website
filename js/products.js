@@ -4,9 +4,6 @@ Filter
 =============
  */
 const filterBtn = document.querySelectorAll(".filter-btn");
-// const titleSection = document.querySelectorAll(".section__title");
-// const latestCenter = document.querySelector(".latest-center");
-// const relatedCenter = document.querySelector(".related-center");
 const categoryCenter = document.querySelector(".category__center");
 
 /*
@@ -26,12 +23,6 @@ const getProducts = async () => {
   }
 };
 
-/*
-=============
-Latest Products Products
-=============
- */
-
 // const latestProduct = async () => {
 //   const products = await getProducts();
 //   const latestProducts = products.filter(
@@ -40,11 +31,6 @@ Latest Products Products
 //   return latestProducts;
 // };
 
-/*
-=============
-Related Products Products
-=============
- */
 // const relatedProduct = async () => {
 //   const products = await getProducts();
 //   const relatedProducts = products.filter(

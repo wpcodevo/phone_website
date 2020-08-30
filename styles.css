@@ -1004,6 +1004,7 @@ Pop Up
   background-color: rgba(0, 0, 0, .3);
   z-index: 1100;
   transition: 0.3s;
+  transform: scale(1);
 }
 
 .popup__content {
@@ -1120,6 +1121,7 @@ Pop Up
 }
 
 .hide__popup {
+  transform: scale(.2);
   opacity: 0;
   visibility: hidden;
 }

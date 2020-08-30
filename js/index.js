@@ -38,12 +38,14 @@ PopUp
 =============
  */
 
-closePopup.addEventListener("click", () => {
-  popup.classList.add("hide__popup");
-});
+if (popup) {
+  closePopup.addEventListener("click", () => {
+    popup.classList.add("hide__popup");
+  });
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    popup.classList.remove("hide__popup");
-  }, 500);
-});
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      popup.classList.remove("hide__popup");
+    }, 500);
+  });
+}

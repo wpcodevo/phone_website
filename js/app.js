@@ -11,6 +11,7 @@ Sliders
 const slider1 = document.getElementById("glide_1");
 const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
+const slider4 = document.getElementById("glide_4");
 
 /*
 Filter
@@ -99,6 +100,19 @@ if (slider3) {
   }).mount();
 }
 
+// Testimonial
+
+if (slider4) {
+  new Glide("#glide_4", {
+    type: "carousel",
+    startAt: 0,
+    perView: 1,
+    rewin: false,
+    animationDuration: 800,
+    animationTimingFunc: "cubic-bezier(0.165, 0.840, 0.440, 1.000)",
+  }).mount();
+}
+
 // Get the Products
 const getProducts = async () => {
   try {
@@ -163,6 +177,10 @@ Array.from(filterBtn).map(async btn => {
 
   btn.addEventListener("click", e => {
     const category = e.currentTarget.closest(".section__title").dataset.id;
+
+    if (e.currentTarget.closest(".section__title").className === "active") {
+      e.currentTarget.closest(".section__title").classList.remove("active");
+    }
     let menuCategory = products.filter(product => {
       if (product.category === category) {
         return product;

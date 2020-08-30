@@ -1216,3 +1216,97 @@ Pop Up
     height: 1.4rem;
   }
 }
+
+/*
+======================
+Facility
+======================
+*/
+
+.facility__section {
+  background-color: var(--primaryColor);
+  padding: 6rem 0;
+}
+
+.facility__contianer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.facility-img__container svg {
+  width: 3rem;
+  height: 3rem;
+  transition: .5s;
+}
+
+.facility__box {
+  text-align: center;
+}
+
+.facility-img__container {
+  position: relative;
+  display: inline-block;
+  line-height: 9.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--white);
+  z-index: 1;
+  margin-bottom: 1.6rem;
+}
+
+.facility-img__container::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: .7rem;
+  background-color: var(--white);
+  z-index: -1;
+}
+
+.facility__box:hover svg {
+  transform: rotateY(180deg);
+  line-height: 9.5rem;
+}
+
+
+/*
+======================
+Facility Media Query
+======================
+*/
+
+@media only screen and (max-width: 998px) {
+  .facility__contianer {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .facility__contianer {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-img__container {
+    width: 7rem;
+    height: 7rem;
+    line-height: 8.5rem;
+  }
+
+  .facility__contianer p {
+    font-size: 1.4rem;
+  }
+}
+
+/*
+======================
+Testimonial 
+======================
+*/

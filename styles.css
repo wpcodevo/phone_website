@@ -3,7 +3,6 @@
 Reset
 ======================
 */
-
 :root {
   --primaryColor: #f1f1f1;
   --Black: #222;
@@ -220,7 +219,6 @@ Navigation
 Navigation Media Query
 ======================
 */
-
 @media only screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
@@ -228,7 +226,7 @@ Navigation Media Query
     left: -30rem;
     background-color: var(--white);
     z-index: 999;
-    width: 0rem;
+    width: 0;
     height: 100%;
     transition: all 0.5s;
   }
@@ -273,7 +271,7 @@ Navigation Media Query
   }
 
   .nav__item:not(:last-child) {
-    margin-right: 0rem;
+    margin-right: 0;
   }
 
   .nav__item {
@@ -286,7 +284,6 @@ Navigation Media Query
     width: 100%;
     color: var(--grey2);
   }
-
 
   body.active::before {
     content: "";
@@ -542,7 +539,6 @@ Collection
 Collection Media Query
 ======================
 */
-
 @media only screen and (max-width: 999px) {
   .collection__container {
     width: 80%;
@@ -557,7 +553,7 @@ Collection Media Query
   }
 
   .collection__box:not(:last-child) {
-    margin: 0 0 1.6rem 0;
+    margin: 0 0 1.6rem;
   }
 }
 
@@ -569,7 +565,7 @@ Collection Media Query
 
   .collection__container {
     width: 100%;
-    height: 0%;
+    height: 50rem;
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
@@ -603,7 +599,7 @@ Latest Products
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 6rem auto;
+  margin: 0 auto 6rem;
   padding: 1.5rem 0;
   background-color: var(--primaryColor);
 }
@@ -676,7 +672,7 @@ span.dot::before {
   }
 
   .section__titles:not(:last-child) {
-    margin: 0 0 1.3rem 0;
+    margin: 0 0 1.3rem;
   }
 }
 
@@ -749,7 +745,7 @@ span.dot::before {
   background-color: transparent;
   border: 1px solid var(--primaryColor);
   outline: none;
-  border-radius: 0px;
+  border-radius: 0;
   box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0);
   top: -7%;
   left: 80%;
@@ -783,7 +779,6 @@ span.dot::before {
 Latest Products Media Query
 ======================
 */
-
 @media only screen and (max-width: 999px) {
   .product__header {
     height: 25rem;
@@ -855,8 +850,8 @@ Product Details
 ======================
 */
 
-.product-detail__container,
-.details__container--left {
+.details__container--left,
+.product-detail__container {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -890,7 +885,7 @@ Product Details
   border: 1px solid var(--primaryColor);
   border-right-color: transparent;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .pictures__container:not(:last-child) {
@@ -902,7 +897,7 @@ Product Details
 }
 
 .pictures__container img {
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .pictures__container:hover img {
@@ -935,7 +930,7 @@ Product Details
 .product-details__btn svg {
   width: 1.9rem;
   height: 1.9rem;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .product-details__btn .add,
@@ -943,7 +938,7 @@ Product Details
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .product-details__btn .add span,
@@ -1008,7 +1003,7 @@ Pop Up
   height: 100vh;
   background-color: rgba(0, 0, 0, .3);
   z-index: 1100;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .popup__content {
@@ -1115,7 +1110,7 @@ Pop Up
   color: var(--white);
   background-color: var(--Black);
   border: 1px solid var(--grey2);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .right__content a:hover {
@@ -1174,7 +1169,7 @@ Pop Up
 @media only screen and (max-width: 568px) {
 
   .popup__right {
-    padding: 0rem 1.6rem;
+    padding: 0 1.6rem;
   }
 
   .popup__content {
@@ -1237,7 +1232,7 @@ Facility
 .facility-img__container svg {
   width: 3rem;
   height: 3rem;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .facility__box {
@@ -1265,7 +1260,7 @@ Facility
   left: 0;
   right: 0;
   bottom: 0;
-  margin: .7rem;
+  margin: 0.7rem;
   background-color: var(--white);
   z-index: -1;
 }
@@ -1275,13 +1270,11 @@ Facility
   line-height: 9.5rem;
 }
 
-
 /*
 ======================
 Facility Media Query
 ======================
 */
-
 @media only screen and (max-width: 998px) {
   .facility__contianer {
     grid-template-columns: 1fr 1fr;
@@ -1310,3 +1303,126 @@ Facility Media Query
 Testimonial 
 ======================
 */
+
+.testimonial {
+  position: relative;
+  background: url('./images/testimonial.jpg') center/cover no-repeat;
+  height: 50rem;
+  padding: 5rem 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.testimonial::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: -1;
+}
+
+.client__image {
+  margin-bottom: 3rem;
+}
+
+.client__image img {
+  width: 7rem;
+  height: 7rem;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.testimonial__container {
+  height: 100%;
+  padding: 1rem;
+}
+
+.testimonial__box {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  color: #ccc;
+
+}
+
+.testimonial__box p {
+  width: 70%;
+  margin: 0 auto;
+  line-height: 2.5rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.client__info h3 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.client__info span {
+  font-size: 1.4rem;
+}
+
+.testimonial .glide__bullets {
+  bottom: -20%;
+}
+
+/*
+======================
+Testimonial Media Query
+======================
+*/
+@media only screen and (max-width: 1200px) {
+
+  .testimonial__box {
+    height: 100%;
+  }
+
+  .testimonial__box p {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .client__image {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .testimonial {
+    height: 100%;
+    padding: 4rem 0 5rem 0;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .testimonial__box {
+    height: 100%;
+  }
+
+  .testimonial__box p {
+    width: 100%;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .client__image {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial__box span {
+    margin-bottom: 1rem;
+  }
+
+  .testimonial .glide__bullets {
+    bottom: -8%;
+  }
+}

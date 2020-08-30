@@ -106,14 +106,14 @@
         },
         {
             "id": 16,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung6.jpeg",
             "price": 400,
             "category": "Special Products"
         },
         {
             "id": 17,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung5.jpeg",
             "price": 550,
             "category": "Trending Products"
@@ -134,7 +134,7 @@
         },
         {
             "id": 20,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung4.jpeg",
             "price": 270,
             "category": "Special Products"
@@ -148,7 +148,7 @@
         },
         {
             "id": 22,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung3.jpeg",
             "price": 460,
             "category": "Trending Products"
@@ -162,14 +162,14 @@
         },
         {
             "id": 24,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung2.jpeg",
             "price": 500,
             "category": "Featured Products"
         },
         {
             "id": 25,
-            "title": "Samsung Galaxy M11",
+            "title": "Samsung Galaxy",
             "image": "./images/products/sumsung/samsung1.jpeg",
             "price": 450,
             "category": "Special Products"

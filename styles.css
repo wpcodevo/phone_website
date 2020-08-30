@@ -5,12 +5,14 @@ Reset
 */
 :root {
   --primaryColor: #f1f1f1;
-  --Black: #222;
+  --black: #222;
   --black2: #555;
-  --Orange: #e24647;
+  --black3: #252525;
+  --orange: #e24647;
   --white: #fff;
   --grey: #959595;
   --grey2: #666;
+  --grey3: #ccc;
   --secondaryColor: #2b1f4d;
   --yellow: #ffcc00;
   --green: #59b210;
@@ -32,7 +34,7 @@ input {
   font-size: 1.6rem;
   font-weight: 400;
   font-family: "Archivo", sans-serif;
-  color: var(--Black);
+  color: var(--black);
 }
 
 a {
@@ -70,7 +72,7 @@ Navigation
 */
 
 .navigation {
-  height: 6.7rem;
+  height: 7rem;
 }
 
 .nav {
@@ -124,12 +126,12 @@ Navigation
   display: inline-block;
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: var(--Black);
+  color: var(--black);
   transition: color 0.3s ease-in-out;
 }
 
 .nav__list .nav__link:hover {
-  color: var(--Orange);
+  color: var(--orange);
 }
 
 .nav__icons {
@@ -147,19 +149,19 @@ Navigation
   justify-content: center;
   align-items: center;
   padding: 0.7rem;
-  border: 1px solid var(--Black);
+  border: 1px solid var(--black);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
 }
 
 .nav__icons .icon__item:link,
 .nav__icons .icon__item:visited {
-  color: var(--Black);
+  color: var(--black);
 }
 
 .nav__icons .icon__item:hover {
-  background-color: var(--Orange);
-  border: 1px solid var(--Black);
+  background-color: var(--orange);
+  border: 1px solid var(--black);
 
 }
 
@@ -172,7 +174,7 @@ Navigation
   position: absolute;
   top: 2px;
   right: -6px;
-  background-color: var(--Orange);
+  background-color: var(--orange);
   padding: 0.2rem 0.4rem;
   border-radius: 100%;
   color: var(--primaryColor);
@@ -248,7 +250,7 @@ Navigation Media Query
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--Orange);
+    background-color: var(--orange);
     padding: 1.8rem 1rem;
   }
 
@@ -292,7 +294,7 @@ Navigation Media Query
     left: 0;
     width: 100%;
     height: 110%;
-    background: var(--Black) none no-repeat 0 0;
+    background: var(--black) none no-repeat 0 0;
     opacity: 0.7;
     z-index: 999;
 
@@ -328,7 +330,7 @@ Hero Area
 }
 
 .glide__arrow:hover {
-  background-color: var(--Black);
+  background-color: var(--black);
 }
 
 .glide__arrow--left {
@@ -382,12 +384,12 @@ Hero Area
   display: inline-block;
   font-weight: 700;
   font-size: 1.4rem;
-  background-color: var(--Black);
+  background-color: var(--black);
   color: var(--primaryColor);
   cursor: pointer;
   margin-top: 1rem;
   padding: 1.5rem 4rem;
-  border: 1px solid var(--Black);
+  border: 1px solid var(--black);
   transition: all 0.3s ease-in-out;
 }
 
@@ -398,7 +400,7 @@ Hero Area
 .hero__left .hero__btn:hover {
   font-weight: 700;
   background-color: transparent;
-  color: var(--Black);
+  color: var(--black);
 }
 
 .hero__left h1 {
@@ -509,7 +511,7 @@ Collection
 }
 
 .collection__content span {
-  color: var(--Black);
+  color: var(--black);
 }
 
 .collection__content h1 {
@@ -636,7 +638,7 @@ span.dot {
   opacity: 0.6;
   padding: 0.45rem;
   position: relative;
-  border: 1px solid var(--Black);
+  border: 1px solid var(--black);
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
@@ -648,8 +650,8 @@ span.dot::before {
   left: 0;
   right: 0;
   bottom: 0;
-  border: 1px solid var(--Black);
-  background-color: var(--Black);
+  border: 1px solid var(--black);
+  background-color: var(--black);
   margin: 1px;
   opacity: 0.6;
 }
@@ -726,8 +728,8 @@ span.dot::before {
   text-transform: uppercase;
   width: 100%;
   padding: 1.4rem 0;
-  border: 1px solid var(--Black);
-  color: var(--Black);
+  border: 1px solid var(--black);
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -736,7 +738,7 @@ span.dot::before {
 }
 
 .product__btn:hover {
-  background-color: var(--Black);
+  background-color: var(--black);
   color: var(--primaryColor);
 }
 
@@ -753,7 +755,7 @@ span.dot::before {
 
 .latest__products .glide__arrow:hover,
 .related__products .glide__arrow:hover {
-  background-color: var(--Orange);
+  background-color: var(--orange);
   border: 1px solid var(--primaryColor);
 }
 
@@ -819,7 +821,7 @@ Latest Products Media Query
   }
 
   .product__btn:hover {
-    background-color: var(--Black);
+    background-color: var(--black);
     color: var(--primaryColor);
   }
 
@@ -893,7 +895,7 @@ Product Details
 }
 
 .pictures__container:hover {
-  border-color: var(--Orange);
+  border-color: var(--orange);
 }
 
 .pictures__container img {
@@ -923,8 +925,8 @@ Product Details
   display: inline-block;
   padding: 1.6rem 3rem;
   text-align: center;
-  color: var(--Black);
-  border: 1px solid var(--Black);
+  color: var(--black);
+  border: 1px solid var(--black);
 }
 
 .product-details__btn svg {
@@ -948,7 +950,7 @@ Product Details
 
 .product-details__btn .add:hover,
 .product-details__btn .buy:hover {
-  background-color: var(--Black);
+  background-color: var(--black);
   color: var(--primaryColor);
 }
 
@@ -1109,7 +1111,7 @@ Pop Up
   border-radius: 3rem;
   font-weight: 700;
   color: var(--white);
-  background-color: var(--Black);
+  background-color: var(--black);
   border: 1px solid var(--grey2);
   transition: 0.3s;
 }
@@ -1117,7 +1119,7 @@ Pop Up
 .right__content a:hover {
   background-color: var(--green);
   border: 1px solid var(--grey2);
-  color: var(--Black);
+  color: var(--black);
 }
 
 .hide__popup {
@@ -1457,7 +1459,7 @@ News Section
 .card__footer h3 {
   font-size: 2.5rem;
   font-weight: 600;
-  color: var(--Black);
+  color: var(--black);
   margin-bottom: 1rem;
 }
 
@@ -1478,15 +1480,15 @@ News Section
 .card__footer a:visited {
   display: inline-block;
   padding: 1.4rem 4rem;
-  border: 1px solid var(--Black);
-  color: var(--Black);
+  border: 1px solid var(--black);
+  color: var(--black);
   transition: .3s;
 }
 
 .card__footer a:hover {
-  border: 1px solid var(--Black);
+  border: 1px solid var(--black);
   color: var(--white);
-  background-color: var(--Black);
+  background-color: var(--black);
 }
 
 /*
@@ -1536,7 +1538,7 @@ NewsLetter
   display: inline-block;
   padding: 1.4rem 3rem;
   margin-left: -.5rem;
-  background-color: var(--Black);
+  background-color: var(--black);
   color: var(--white);
   transition: .3s;
 }
@@ -1604,5 +1606,70 @@ Newsletter Media Query
   .newsletter__link:visited {
     padding: 1.2rem 2rem;
     margin-left: 0rem;
+  }
+}
+
+/*
+======================
+Footer
+======================
+*/
+
+.footer {
+  background-color: var(--black3);
+  padding: 6rem 1.rem;
+  line-height: 3rem;
+}
+
+.footer-top__box span svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: var(--grey3);
+}
+
+.footer-top__box span {
+  margin-right: 1rem;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: var(--grey3);
+}
+
+.footer-top__box a:link,
+.footer-top__box a:visited {
+  display: block;
+  color: var(--grey);
+  font-size: 1.4rem;
+  transition: .6s;
+}
+
+.footer-top__box a:hover {
+  color: var(--orange);
+}
+
+.footer-top__box div {
+  color: var(--grey);
+  font-size: 1.4rem;
+}
+
+.footer-top__box h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 998px) {
+  .footer__top {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
 }

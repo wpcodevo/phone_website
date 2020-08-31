@@ -799,18 +799,6 @@ span.dot::before {
   max-height: 100%;
 }
 
-.product ul a {
-  width: 2.7rem;
-  height: 2.7rem;
-}
-
-.product ul {
-  top: 25%;
-  left: 50%;
-  width: 16rem;
-  height: 4rem;
-}
-
 .product__footer {
   padding: 1rem 0;
 }
@@ -941,6 +929,18 @@ Latest Products Media Query
 
   .product__header img {
     width: 50%;
+  }
+
+  .product ul a {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .product ul {
+    top: 25%;
+    left: 50%;
+    width: 16rem;
+    height: 4rem;
   }
 
   .latest__products .glide__arrow--left,
@@ -1253,16 +1253,30 @@ Go Up
   position: fixed;
   right: 2%;
   bottom: 10%;
-  padding: 1rem 1.6rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 1rem;
   background-color: var(--orange);
   z-index: 20000;
   cursor: pointer;
   transition: 0.3s;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  0% {
+    transform: scale(1);
+  }
 }
 
 .goto-top svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
   fill: var(--white);
 }
 

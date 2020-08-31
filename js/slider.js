@@ -53,12 +53,15 @@ if (slider2) {
       768: {
         perView: 2,
       },
-      568: {
-        perView: 1,
-      },
     },
   }).mount();
 }
+
+/*
+=============
+Related Products
+=============
+ */
 
 if (slider3) {
   new Glide("#glide_3", {

@@ -7,30 +7,20 @@ const navOpen = document.querySelector(".nav__hamburger");
 const navClose = document.querySelector(".close__toggle");
 const menu = document.querySelector(".nav__menu");
 const scrollLink = document.querySelectorAll(".scroll-link");
-
-/*
-=============
-PopUp
-=============
- */
-
-const popup = document.querySelector(".popup");
-const closePopup = document.querySelector(".popup__close");
-
-/*
-=============
-Navigation
-=============
- */
+const navContainer = document.querySelector(".nav__menu");
 
 navOpen.addEventListener("click", () => {
   menu.classList.add("open");
   document.body.classList.add("active");
+  navContainer.style.left = "0";
+  navContainer.style.width = "30rem";
 });
 
 navClose.addEventListener("click", () => {
   menu.classList.remove("open");
   document.body.classList.remove("active");
+  navContainer.style.left = "-30rem";
+  navContainer.style.width = "0";
 });
 
 /*
@@ -38,6 +28,8 @@ navClose.addEventListener("click", () => {
 PopUp
 =============
  */
+const popup = document.querySelector(".popup");
+const closePopup = document.querySelector(".popup__close");
 
 if (popup) {
   closePopup.addEventListener("click", () => {
@@ -57,6 +49,9 @@ Fixed Navigation
 =============
  */
 
+const navBar = document.querySelector(".navigation");
+const gotoTop = document.querySelector(".goto-top");
+
 Array.from(scrollLink).map(link => {
   link.addEventListener("click", e => {
     // Prevent Default
@@ -64,10 +59,33 @@ Array.from(scrollLink).map(link => {
 
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
-    let position = element.offsetTop;
+    const navHeight = navBar.getBoundingClientRect().height;
+    let position = element.offsetTop - navHeight;
     window.scrollTo({
       left: 0,
       top: position,
     });
+    navContainer.style.left = "-30rem";
+    document.body.classList.remove("active");
   });
 });
+
+// Fix NavBar
+
+window.addEventListener("scroll", e => {
+  const scrollHeight = window.pageYOffset;
+  const navHeight = navBar.getBoundingClientRect().height;
+  if (scrollHeight > navHeight) {
+    navBar.classList.add("fix__nav");
+  } else {
+    navBar.classList.remove("fix__nav");
+  }
+
+  if (scrollHeight > 500) {
+    gotoTop.classList.add("show-top");
+  } else {
+    gotoTop.classList.remove("show-top");
+  }
+});
+
+// Smooth Scroll

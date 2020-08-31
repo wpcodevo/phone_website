@@ -28,7 +28,7 @@ Reset
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body,
@@ -80,14 +80,25 @@ Navigation
 
 .navigation {
   height: 7rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
+  height: 7rem;
   padding: 0 1rem;
+}
+
+.fix__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 39999;
 }
 
 .nav__logo a {
@@ -225,17 +236,10 @@ Navigation Media Query
   .nav__menu {
     position: fixed;
     top: 0;
-    left: -30rem;
     background-color: var(--white);
     z-index: 999;
-    width: 0;
     height: 100%;
     transition: all 0.5s;
-  }
-
-  .nav__menu.open {
-    width: 30rem;
-    left: 0;
   }
 
   .nav__logo {
@@ -250,7 +254,7 @@ Navigation Media Query
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--black);
+    background-color: var(--orange);
     padding: 1.8rem 1rem;
   }
 
@@ -950,9 +954,9 @@ Latest Products Media Query
     left: 85%;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 460px) {
   .product__header {
-    height: 11rem;
+    height: 12rem;
   }
 }
 
@@ -1484,11 +1488,18 @@ Go Up
   padding: 0.8rem 1.4rem;
   border-radius: 1rem;
   background-color: var(--orange);
-  z-index: 20000;
+  visibility: hidden;
   cursor: pointer;
   transition: 0.3s;
   animation: bounce 2s ease-in-out infinite;
 }
+
+.show-top:link,
+.show-top:visited {
+  visibility: visible;
+  z-index: 20000;
+}
+
 @keyframes bounce {
   0% {
     transform: scale(0.5);

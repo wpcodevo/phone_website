@@ -311,6 +311,7 @@ Hero Area
 .hero,
 .hero .glide__slides {
   background-color: var(--primaryColor);
+  position: relative;
   width: 100%;
   height: 100vh;
 }
@@ -423,6 +424,7 @@ Hero Media Query
 ======================
 */
 @media only screen and (max-width: 999px) {
+
   .hero__center {
     flex-direction: column;
     text-align: center;
@@ -665,6 +667,102 @@ span.dot::before {
 }
 
 .section__title.active .primary__title {
+  opacity: 1;
+}
+
+.product {
+  position: relative;
+}
+
+
+.product ul svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  fill: var(--white);
+}
+
+.product ul {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 35%;
+  left: 50%;
+  width: 17rem;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, .5);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.7);
+  transition: .5s;
+}
+
+.product:hover ul {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.product ul li:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.product ul a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange);
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.product ul a:hover {
+  background-color: var(--black);
+}
+
+.product ul a::before {
+  content: "";
+  position: absolute;
+  top: -.6rem;
+  left: -.6rem;
+  height: 0;
+  width: 0;
+  border-top: 3px solid var(--orange);
+  border-left: 3px solid var(--orange);
+  transition: .5s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.product ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -.6rem;
+  right: -.6rem;
+  width: 0;
+  height: 0;
+  border-bottom: 3px solid var(--orange);
+  border-right: 3px solid var(--orange);
+  z-index: 1;
+  opacity: 0;
+  transition: .5s;
+}
+
+.product ul a:hover::before {
+  width: 126%;
+  height: 126%;
+  border-top: 3px solid var(--black);
+  border-left: 3px solid var(--black);
+  opacity: 1;
+}
+
+
+.product ul a:hover::after {
+  width: 126%;
+  height: 126%;
+  border-bottom: 3px solid var(--black);
+  border-right: 3px solid var(--black);
   opacity: 1;
 }
 
@@ -1014,6 +1112,7 @@ Pop Up
   top: 50%;
   left: 50%;
   width: 90%;
+  margin: 0 auto;
   height: 55rem;
   transform: translate(-50%, -50%);
   padding: 1.6rem;
@@ -1154,7 +1253,7 @@ Pop Up
   }
 }
 
-@media only screen and (max-width: 998px) {
+@media only screen and (max-width: 768px) {
   .right__content h1 {
     font-size: 4rem;
   }
@@ -1165,6 +1264,7 @@ Pop Up
 
   .popup__form {
     width: 90%;
+    margin: 0 auto;
     padding: 1.8rem 0;
     margin-bottom: 1.5rem;
   }
@@ -1178,6 +1278,8 @@ Pop Up
 
   .popup__content {
     height: 35rem;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .right__content {

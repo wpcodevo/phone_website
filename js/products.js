@@ -125,6 +125,29 @@ const displayProductItems = items => {
                       </div>
                       <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
                     </div>
+                  <ul>
+                      <li>
+                        <a data-tip="Quick View" data-place="left" href="#">
+                          <svg>
+                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a data-tip="Add To Wishlist" data-place="left" href="#">
+                          <svg>
+                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a data-tip="Add To Compare" data-place="left" href="#">
+                          <svg>
+                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                          </svg>
+                        </a>
+                      </li>
+                  </ul>
                   </div>
                   `
   );

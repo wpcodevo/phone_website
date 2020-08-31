@@ -115,3 +115,5 @@ if (slider5) {
     },
   }).mount();
 }
+
+AOS.init();

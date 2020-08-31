@@ -6,6 +6,7 @@ Navigation
 const navOpen = document.querySelector(".nav__hamburger");
 const navClose = document.querySelector(".close__toggle");
 const menu = document.querySelector(".nav__menu");
+const scrollLink = document.querySelectorAll(".scroll-link");
 
 /*
 =============
@@ -49,3 +50,24 @@ if (popup) {
     }, 500);
   });
 }
+
+/*
+=============
+Fixed Navigation
+=============
+ */
+
+Array.from(scrollLink).map(link => {
+  link.addEventListener("click", e => {
+    // Prevent Default
+    e.preventDefault();
+
+    const id = e.currentTarget.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    let position = element.offsetTop;
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+  });
+});

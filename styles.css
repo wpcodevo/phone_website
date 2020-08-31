@@ -8,6 +8,7 @@ Reset
   --black: #222;
   --black2: #555;
   --black3: #252525;
+  --black4: #000;
   --orange: #e24647;
   --white: #fff;
   --grey: #959595;
@@ -27,6 +28,7 @@ Reset
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -83,9 +85,9 @@ Navigation
   padding: 0 1rem;
 }
 
-.nav__logo {
+.nav__logo a {
+  color: var(--black);
   padding: 1rem 0;
-  cursor: pointer;
 }
 
 .nav__logo h2 {
@@ -1240,6 +1242,32 @@ Pop Up
   transform: scale(.2);
   opacity: 0;
   visibility: hidden;
+}
+
+/*
+======================
+Go Up
+======================
+*/
+.goto-top {
+  position: fixed;
+  right: 2%;
+  bottom: 10%;
+  padding: 1rem 1.6rem;
+  background-color: var(--orange);
+  z-index: 20000;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.goto-top svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--white);
+}
+
+.goto-top:hover {
+  background-color: var(--black4);
 }
 
 @media only screen and (max-width: 1200px) {

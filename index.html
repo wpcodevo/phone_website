@@ -37,7 +37,9 @@
           </div>
 
           <div class="nav__logo">
-            <h2>PHONE</h2>
+            <a href="#header">
+              <h2>PHONE</h2>
+            </a>
           </div>
 
           <div class="nav__menu">
@@ -51,16 +53,16 @@
             </div>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#" class="nav__link">Home</a>
+                <a href="#header" class="nav__link">Home</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Products</a>
+                <a href="#category" class="nav__link">Category</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Blog</a>
+                <a href="#news" class="nav__link">Blog</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Contact</a>
+                <a href="#contact" class="nav__link">Contact</a>
               </li>
             </ul>
           </div>
@@ -177,7 +179,7 @@
       </section>
 
       <!-- Latest Products -->
-      <section class="section latest__products">
+      <section class="section latest__products" id="latest">
         <div class="title__container">
           <div class="section__title filter-btn active" data-id="Latest Products">
             <span class="dot"></span>
@@ -693,7 +695,7 @@
         </div>
       </section>
 
-      <section class="category__section section">
+      <section class="category__section section" id="category">
         <div class="tab__list">
           <div class="title__container tabs">
             <div class="section__titles category__titles ">
@@ -732,7 +734,7 @@
     </section>
 
     <!-- Facility Section -->
-    <section class="facility__section section">
+    <section class="facility__section section" id="facility">
       <div class="container">
         <div class="facility__contianer">
           <div class="facility__box">
@@ -776,7 +778,7 @@
     </div>
 
     <!-- Testimonial Section -->
-    <section class="section testimonial">
+    <section class="section testimonial" id="testimonial">
       <div class="testimonial__container">
         <div class="glide" id="glide_4">
           <div class="glide__track" data-glide-el="track">
@@ -866,7 +868,7 @@
     </section>
 
     <!--New Section  -->
-    <section class="section news">
+    <section class="section news" id="news">
       <div class="container">
         <div class="title__container">
           <div class="section__titles">
@@ -959,7 +961,7 @@
     </section>
 
     <!-- NewsLetter -->
-    <section class="section newsletter">
+    <section class="section newsletter" id="contact">
       <div class="container">
         <div class="newsletter__content">
           <div class="newsletter__data">
@@ -1055,6 +1057,7 @@
   </footer>
   <!-- End Footer -->
 
+  <!-- PopUp -->
   <div class="popup hide__popup">
     <div class="popup__content">
       <div class="popup__close">
@@ -1081,6 +1084,14 @@
     </div>
   </div>
 
+  <!-- Go To -->
+
+  <a href="#header" class="goto-top">
+    <svg>
+      <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
+    </svg>
+  </a>
+
 
   <!-- Glide Carousel Script -->
   <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
@@ -1090,8 +1101,8 @@
 
   <!-- Custom JavaScript -->
   <script src="./js/products.js"></script>
-  <script src="./js/slider.js"></script>
   <script src="./js/index.js"></script>
+  <script src="./js/slider.js"></script>
 </body>
 
 </html>

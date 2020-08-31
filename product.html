@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
   <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css" />
 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="styles.css" />
 
@@ -32,7 +34,9 @@
           </div>
 
           <div class="nav__logo">
-            <h2>PHONE</h2>
+            <a href="/" class="scroll-link">
+              PHONE
+            </a>
           </div>
 
           <div class="nav__menu">
@@ -46,7 +50,7 @@
             </div>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#" class="nav__link">Home</a>
+                <a href="/" class="nav__link">Home</a>
               </li>
               <li class="nav__item">
                 <a href="#" class="nav__link">Products</a>
@@ -271,14 +275,52 @@
             </div>
           </div>
         </div>
+
+        <div class="product-detail__bottom">
+          <div class="title__container tabs">
+
+            <div class="section__titles category__titles ">
+              <div class="section__title detail-btn active" data-id="description">
+                <span class="dot"></span>
+                <h1 class="primary__title">Description</h1>
+              </div>
+            </div>
+
+            <div class="section__titles">
+              <div class="section__title detail-btn" data-id="reviews">
+                <span class="dot"></span>
+                <h1 class="primary__title">Reviews</h1>
+              </div>
+            </div>
+
+            <div class="section__titles">
+              <div class="section__title detail-btn" data-id="shipping">
+                <span class="dot"></span>
+                <h1 class="primary__title">Shipping Details</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail__content">
+            <div class="content active" id="description">
+              <h1>Description</h1>
+            </div>
+            <div class="content" id="reviews">
+              <h1>Reviews</h1>
+            </div>
+            <div class="content" id="shipping">
+              <h1>Shipping</h1>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Related Products -->
       <section class="section related__products">
         <div class="title__container">
-          <div class="section__title filter-btn active>
+          <div class="section__title filter-btn active">
             <span class=" dot"></span>
-            <h1 class="primary__title">Latest Products</h1>
+            <h1 class="primary__title">Related Products</h1>
           </div>
         </div>
         <div class="container" data-aos="fade-up" data-aos-duration="1200">
@@ -1308,6 +1350,48 @@
         </div>
       </section>
     </div>
+    <!-- Facility Section -->
+    <section class="facility__section section" id="facility">
+      <div class="container">
+        <div class="facility__contianer">
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/sprite.svg#icon-airplane"></use>
+              </svg>
+            </div>
+            <p>FREE SHIPPING WORLD WIDE</p>
+          </div>
+
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/sprite.svg#icon-credit-card-alt"></use>
+              </svg>
+            </div>
+            <p>100% MONEY BACK GUARANTEE</p>
+          </div>
+
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
+              </svg>
+            </div>
+            <p>MANY PAYMENT GATWAYS</p>
+          </div>
+
+          <div class="facility__box">
+            <div class="facility-img__container">
+              <svg>
+                <use xlink:href="./images/sprite.svg#icon-headphones"></use>
+              </svg>
+            </div>
+            <p>24/7 ONLINE SUPPORT</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -1398,6 +1482,9 @@
 
   <!-- Glide Carousel Script -->
   <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
+  <!-- Animate On Scroll -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Custom JavaScript -->
   <script src="./js/products.js"></script>

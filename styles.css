@@ -98,15 +98,13 @@ Navigation
   left: 0;
   width: 100%;
   background-color: var(--white);
-  z-index: 39999;
+  z-index: 1200;
 }
 
 .nav__logo a {
+  font-size: 2.5rem;
   color: var(--black);
-  padding: 1rem 0;
-}
-
-.nav__logo h2 {
+  padding: 1.6rem;
   font-weight: 700;
 }
 
@@ -236,10 +234,17 @@ Navigation Media Query
   .nav__menu {
     position: fixed;
     top: 0;
+    left: -30rem;
+    width: 0;
     background-color: var(--white);
-    z-index: 999;
+    z-index: 9990;
     height: 100%;
     transition: all 0.5s;
+  }
+
+  .nav__menu.open {
+    left: 30rem;
+    width: 30rem;
   }
 
   .nav__logo {
@@ -944,6 +949,11 @@ Latest Products Media Query
     height: 4rem;
   }
 
+  .rating svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
   .latest__products .glide__arrow--left,
   .related__products .glide__arrow--left {
     left: 66%;
@@ -957,6 +967,10 @@ Latest Products Media Query
 @media only screen and (max-width: 460px) {
   .product__header {
     height: 12rem;
+  }
+
+  .product__footer h3 {
+    font-size: 1.2rem;
   }
 }
 
@@ -1215,9 +1229,29 @@ Product Details
   margin-right: 1rem;
 }
 
+/* Product Details Bottom */
+
+.detail__content {
+  position: relative;
+}
+
+.detail__content .content {
+  position: absolute;
+  transform: translate(0, 25vh);
+  transition: all 0.6s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.detail__content .content.active {
+  transform: translate(0, 0vh);
+  opacity: 1;
+  visibility: visible;
+}
+
 /*
 ======================
-Product Media Query
+Product Details Media Query
 ======================
 */
 @media only screen and (max-width: 998px) {
@@ -1497,7 +1531,7 @@ Go Up
 .show-top:link,
 .show-top:visited {
   visibility: visible;
-  z-index: 20000;
+  z-index: 1999;
 }
 
 @keyframes bounce {

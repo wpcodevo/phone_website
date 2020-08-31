@@ -1,17 +1,3 @@
-/*
-=============
-Filter
-=============
- */
-const filterBtn = document.querySelectorAll(".filter-btn");
-const categoryCenter = document.querySelector(".category__center");
-
-/*
-=============
-Get Products
-=============
- */
-
 const getProducts = async () => {
   try {
     const results = await fetch("/data/products.json");
@@ -23,76 +9,17 @@ const getProducts = async () => {
   }
 };
 
-// const latestProduct = async () => {
-//   const products = await getProducts();
-//   const latestProducts = products.filter(
-//     product => product.category === "Latest Products"
-//   );
-//   return latestProducts;
-// };
-
-// const relatedProduct = async () => {
-//   const products = await getProducts();
-//   const relatedProducts = products.filter(
-//     product => product.category === "Related Products"
-//   );
-//   return relatedProducts;
-// };
-
 /*
 =============
 Load Category Products
 =============
  */
+const categoryCenter = document.querySelector(".category__center");
+
 window.addEventListener("DOMContentLoaded", async function () {
   const products = await getProducts();
   displayProductItems(products);
-  // const relatedProducts = await relatedProduct();
-  // const latestProducts = await latestProduct();
-  // displayProducts(latestProducts, latestCenter);
-  // displayProducts(relatedProducts, relatedCenter);
 });
-
-// const displayProducts = (items, productCenter) => {
-//   let displayProduct = items.map(
-//     product => `
-//                   <li class="glide__slide">
-//                   <div class="product">
-//                     <div class="product__header">
-//                       <a href="#"><img src=${product.image} alt="product"></a>
-//                     </div>
-//                     <div class="product__footer">
-//                       <h3>${product.name}</h3>
-//                       <div class="rating">
-//                         <svg>
-//                           <use xlink:href="./images/sprite.svg#icon-star-full"></use>
-//                         </svg>
-//                         <svg>
-//                           <use xlink:href="./images/sprite.svg#icon-star-full"></use>
-//                         </svg>
-//                         <svg>
-//                           <use xlink:href="./images/sprite.svg#icon-star-full"></use>
-//                         </svg>
-//                         <svg>
-//                           <use xlink:href="./images/sprite.svg#icon-star-full"></use>
-//                         </svg>
-//                         <svg>
-//                           <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
-//                         </svg>
-//                       </div>
-//                       <div class="product__price">
-//                         <span>$${product.price}</span>
-//                       </div>
-//                       <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
-//                     </div>
-//                   </div>
-//                 </li>
-//                   `
-//   );
-//   displayProduct = displayProduct.join("");
-//   console.log(displayProduct);
-//   productCenter.innerHTML = displayProduct;
-// };
 
 const displayProductItems = items => {
   let displayProduct = items.map(
@@ -153,7 +80,9 @@ const displayProductItems = items => {
   );
 
   displayProduct = displayProduct.join("");
-  categoryCenter.innerHTML = displayProduct;
+  if (categoryCenter) {
+    categoryCenter.innerHTML = displayProduct;
+  }
 };
 
 /*
@@ -162,25 +91,80 @@ Filtering
 =============
  */
 
-Array.from(filterBtn).map(async btn => {
-  const products = await getProducts();
+const filterBtn = document.querySelectorAll(".filter-btn");
+const categoryContainer = document.getElementById("category");
 
-  btn.addEventListener("click", e => {
-    const category = e.currentTarget.closest(".section__title").dataset.id;
+if (categoryContainer) {
+  categoryContainer.addEventListener("click", async e => {
+    const target = e.target.closest(".section__title");
+    if (!target) return;
 
-    if (e.currentTarget.closest(".section__title").className === "active") {
-      e.currentTarget.closest(".section__title").classList.remove("active");
-    }
-    let menuCategory = products.filter(product => {
-      if (product.category === category) {
-        return product;
+    const id = target.dataset.id;
+    const products = await getProducts();
+
+    if (id) {
+      // remove active from buttons
+      Array.from(filterBtn).forEach(btn => {
+        btn.classList.remove("active");
+      });
+      target.classList.add("active");
+
+      // Load Products
+      let menuCategory = products.filter(product => {
+        if (product.category === id) {
+          return product;
+        }
+      });
+
+      if (id === "All Products") {
+        displayProductItems(products);
+      } else {
+        displayProductItems(menuCategory);
       }
-    });
-
-    if (category === "All Products") {
-      displayProductItems(products);
-    } else {
-      displayProductItems(menuCategory);
     }
   });
-});
+}
+
+// Array.from(filterBtn).map(async btn => {
+
+//   btn.addEventListener("click", e => {
+//     const category = e.currentTarget.closest(".section__title").dataset.id;
+
+//     if (e.currentTarget.closest(".section__title").className === "active") {
+//       e.currentTarget.closest(".section__title").classList.remove("active");
+//     }
+
+//   });
+// });
+
+/*
+=============
+Product Details Bottom
+=============
+ */
+
+const btns = document.querySelectorAll(".detail-btn");
+const detail = document.querySelector(".product-detail__bottom");
+const contents = document.querySelectorAll(".content");
+
+if (detail) {
+  detail.addEventListener("click", e => {
+    const target = e.target.closest(".detail-btn");
+    if (!target) return;
+
+    const id = target.dataset.id;
+    if (id) {
+      Array.from(btns).forEach(btn => {
+        // remove active from all btn
+        btn.classList.remove("active");
+        e.target.closest(".detail-btn").classList.add("active");
+      });
+      // hide other active
+      Array.from(contents).forEach(content => {
+        content.classList.remove("active");
+      });
+      const element = document.getElementById(id);
+      element.classList.add("active");
+    }
+  });
+}

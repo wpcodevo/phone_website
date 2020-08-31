@@ -78,9 +78,6 @@ if (slider3) {
       768: {
         perView: 2,
       },
-      568: {
-        perView: 1,
-      },
     },
   }).mount();
 }

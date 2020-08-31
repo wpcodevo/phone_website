@@ -99,7 +99,7 @@ const displayProductItems = items => {
     product => ` 
                   <div class="product category__products">
                     <div class="product__header">
-                      <a href="#"><img src=${product.image} alt="product"></a>
+                      <img src=${product.image} alt="product">
                     </div>
                     <div class="product__footer">
                       <h3>${product.title}</h3>

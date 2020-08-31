@@ -672,6 +672,7 @@ span.dot::before {
 
 .product {
   position: relative;
+  text-align: center;
 }
 
 
@@ -692,12 +693,14 @@ span.dot::before {
   height: 5rem;
   background-color: rgba(255, 255, 255, .5);
   opacity: 0;
+  visibility: hidden;
   transform: translate(-50%, -50%) scale(.7);
   transition: .5s;
 }
 
 .product:hover ul {
   opacity: 1;
+  visibility: visible;
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -792,6 +795,18 @@ span.dot::before {
 .product__header img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.product ul a {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.product ul {
+  top: 25%;
+  left: 50%;
+  width: 16rem;
+  height: 4rem;
 }
 
 .product__footer {

@@ -485,6 +485,7 @@ Hero Media Query
 }
 
 @media only screen and (max-width: 567px) {
+
   .hero,
   .hero .glide__slides {
     height: 60vh;
@@ -939,6 +940,7 @@ Latest Products Media Query
 }
 
 @media only screen and (max-width: 768px) {
+
   .latest__products .glide__arrow--left,
   .related__products .glide__arrow--left {
     left: 70%;
@@ -2047,6 +2049,8 @@ Product Details
 
 .detail__content {
   position: relative;
+  height: 55rem;
+
 }
 
 .detail__content .content {
@@ -2055,6 +2059,7 @@ Product Details
   transition: all 0.6s ease-in-out;
   opacity: 0;
   visibility: hidden;
+  z-index: 555;
 }
 
 .detail__content .content.active {
@@ -2062,6 +2067,84 @@ Product Details
   opacity: 1;
   visibility: visible;
 }
+
+#shipping h3,
+#shipping p {
+  color: var(--grey2);
+}
+
+#shipping p,
+#description p {
+  padding: 1.6rem 0;
+  line-height: 2.8rem;
+}
+
+#reviews {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--grey2);
+  border-bottom: 1px solid var(--primaryColor);
+}
+
+#description p,
+#description li,
+#description h2 {
+  color: var(--grey2);
+}
+
+#description h2 {
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+#description li {
+  line-height: 3rem;
+  color: vaf;
+}
+
+#description ol {
+  padding-left: 1.6rem;
+}
+
+/* Product Details Bottom Media Query*/
+
+@media only screen and (max-width: 1200px) {
+  .detail__content {
+    height: 65rem;
+  }
+}
+
+@media only screen and (max-width: 998px) {
+  .detail__content {
+    height: 70rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .detail__content {
+    height: 85rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .detail__content {
+    height: 110rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .detail__content {
+    height: 130rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .detail__content {
+    height: 160rem;
+  }
+}
+
+
 
 /*
 ======================
@@ -2321,6 +2404,7 @@ Cart Area Media Query
 */
 
 @media only screen and (max-width: 1200px) {
+
   .minus-btn,
   .plus-btn {
     padding: 0.6rem 0.8rem;

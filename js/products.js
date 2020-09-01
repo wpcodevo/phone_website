@@ -150,12 +150,12 @@ let picActive = 1;
     const target = e.target.closest("img");
     if (!target) return;
     const id = target.id.slice(3);
-    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id, e);
+    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
   });
 });
 
 // change active image
-const changeImage = (imgSrc, n, event) => {
+const changeImage = (imgSrc, n) => {
   // change the main image
   pic.src = imgSrc;
   // change the background-image

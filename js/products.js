@@ -127,6 +127,44 @@ if (categoryContainer) {
 
 /*
 =============
+Product Details Left
+=============
+ */
+const picContainer = document.querySelector(".product__pictures");
+const zoom = document.getElementById("zoom");
+const picture = document.getElementById("pic");
+
+// Picture List
+const picList = [pic1, pic2, pic3, pic4, pic5];
+
+// Active Picture
+let picActive = 1;
+
+["mouseover", "touchstart"].forEach(event => {
+  picContainer.addEventListener(event, e => {
+    const target = e.target.closest("img");
+    if (!target) return;
+    const id = target.id.slice(3);
+    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
+  });
+});
+
+// change active image
+const changeImage = (imgSrc, n) => {
+  // change the main image
+  picture.src = imgSrc;
+  // change the background-image
+  zoom.style.backgroundImage = `url(${imgSrc})`;
+  //   remove the border from the previous active side image
+  picList[picActive - 1].classList.remove("img-active");
+  // add to the active image
+  picList[n - 1].classList.add("img-active");
+  //   update the active side picture
+  picActive = n;
+};
+
+/*
+=============
 Product Details Bottom
 =============
  */

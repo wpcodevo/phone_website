@@ -115,18 +115,62 @@
                             <table width="100%" class="table">
                                 <thead>
                                     <tr>
-                                        <th width="20%">PRODUCT</th>
-                                        <th width="30%">NAME</th>
-                                        <th width="15%">UNIT PRICE</th>
-                                        <th width="20%">QUANTITY</th>
-                                        <th width="15%">TOTAL</th>
+                                        <th width="10rem">PRODUCT</th>
+                                        <th width="20rem">NAME</th>
+                                        <th width="15rem">UNIT PRICE</th>
+                                        <th width="20rem">QUANTITY</th>
+                                        <th width="15rem">TOTAL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td width="20%" class="product__thumbnail">
+                                        <td width="10rem" class="product__thumbnail">
                                             <a href="#">
                                                 <img src="./images/products/iPhone/iphone6.jpeg" alt="">
+                                            </a>
+                                        </td>
+                                        <td width="20rem" class="product__name">
+                                            <a href="#">Apple iPhone 11</a>
+                                            <br><br>
+                                            <small>White/6.25</small>
+                                        </td>
+                                        <td width="15rem" class="product__price">
+                                            <div class="price">
+                                                <span class="new__price">$250.99</span>
+                                            </div>
+                                        </td>
+                                        <td width="20rem" class="product__quantity">
+                                            <div class="input-counter">
+                                                <div>
+                                                    <span class="minus-btn">
+                                                        <svg>
+                                                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
+                                                    <span class="plus-btn">
+                                                        <svg>
+                                                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td width="15rem" class="product__subtotal">
+                                            <div class="price">
+                                                <span class="new__price">$250.99</span>
+                                            </div>
+                                            <a href="#" class="remove__cart-item">
+                                                <svg>
+                                                    <use xlink:href="./images/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="20%" class="product__thumbnail">
+                                            <a href="#">
+                                                <img src="./images/products/iPhone/iphone4.jpeg" alt="">
                                             </a>
                                         </td>
                                         <td width="30%" class="product__name">
@@ -182,7 +226,7 @@
                         </div>
 
                         <div class="cart__totals">
-                            <h3>Cart Total</h3>
+                            <h3>Cart Totals</h3>
                             <ul>
                                 <li>
                                     Subtotal
@@ -197,7 +241,7 @@
                                     <span class="new__price">$250.99</span>
                                 </li>
                             </ul>
-                            <a href=""></a>
+                            <a href="">PROCEED TO CHECKOUT</a>
                         </div>
                     </form>
                 </div>

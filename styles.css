@@ -1833,7 +1833,8 @@ Product Details
 }
 
 .pictures__container:hover {
-  border-color: var(--orange);
+  border: 1px solid var(--orange);
+
 }
 
 .pictures__container img {

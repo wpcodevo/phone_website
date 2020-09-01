@@ -4,14 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development --watch"
+    "build": "gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "browser-sync": "^2.26.12",
+    "gulp-sourcemaps": "^2.6.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-line-ending-corrector": "^1.0.3",
+    "gulp-minify": "^3.1.0"
+  }
 }

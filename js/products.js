@@ -130,9 +130,14 @@ if (categoryContainer) {
 Product Details Left
 =============
  */
+const pic1 = document.getElementById("pic1");
+const pic2 = document.getElementById("pic2");
+const pic3 = document.getElementById("pic3");
+const pic4 = document.getElementById("pic4");
+const pic5 = document.getElementById("pic5");
 const picContainer = document.querySelector(".product__pictures");
 const zoom = document.getElementById("zoom");
-const picture = document.getElementById("pic");
+const pic = document.getElementById("pic");
 
 // Picture List
 const picList = [pic1, pic2, pic3, pic4, pic5];
@@ -145,14 +150,14 @@ let picActive = 1;
     const target = e.target.closest("img");
     if (!target) return;
     const id = target.id.slice(3);
-    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
+    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id, e);
   });
 });
 
 // change active image
-const changeImage = (imgSrc, n) => {
+const changeImage = (imgSrc, n, event) => {
   // change the main image
-  picture.src = imgSrc;
+  pic.src = imgSrc;
   // change the background-image
   zoom.style.backgroundImage = `url(${imgSrc})`;
   //   remove the border from the previous active side image

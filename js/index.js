@@ -88,7 +88,7 @@ window.addEventListener("scroll", e => {
     navBar.classList.remove("fix__nav");
   }
 
-  if (scrollHeight > 500) {
+  if (scrollHeight > 300) {
     gotoTop.classList.add("show-top");
   } else {
     gotoTop.classList.remove("show-top");

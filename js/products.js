@@ -125,18 +125,6 @@ if (categoryContainer) {
   });
 }
 
-// Array.from(filterBtn).map(async btn => {
-
-//   btn.addEventListener("click", e => {
-//     const category = e.currentTarget.closest(".section__title").dataset.id;
-
-//     if (e.currentTarget.closest(".section__title").className === "active") {
-//       e.currentTarget.closest(".section__title").classList.remove("active");
-//     }
-
-//   });
-// });
-
 /*
 =============
 Product Details Bottom

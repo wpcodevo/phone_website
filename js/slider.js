@@ -1,19 +1,14 @@
 /*
 =============
-Slider
+Glide Js Carousel
 =============
  */
+
 const slider1 = document.getElementById("glide_1");
 const slider2 = document.getElementById("glide_2");
 const slider3 = document.getElementById("glide_3");
 const slider4 = document.getElementById("glide_4");
 const slider5 = document.getElementById("glide_5");
-
-/*
-=============
-Glide Js Carousel
-=============
- */
 
 /*
 =============

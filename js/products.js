@@ -146,12 +146,14 @@ const picList = [pic1, pic2, pic3, pic4, pic5];
 let picActive = 1;
 
 ["mouseover", "touchstart"].forEach(event => {
-  picContainer.addEventListener(event, e => {
-    const target = e.target.closest("img");
-    if (!target) return;
-    const id = target.id.slice(3);
-    changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
-  });
+  if (picContainer) {
+    picContainer.addEventListener(event, e => {
+      const target = e.target.closest("img");
+      if (!target) return;
+      const id = target.id.slice(3);
+      changeImage(`./images/products/iPhone/iphone${id}.jpeg`, id);
+    });
+  }
 });
 
 // change active image

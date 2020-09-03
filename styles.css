@@ -1834,7 +1834,6 @@ Product Details
 
 .pictures__container:hover {
   border: 1px solid var(--orange);
-
 }
 
 .pictures__container img {
@@ -2051,7 +2050,6 @@ Product Details
 .detail__content {
   position: relative;
   height: 55rem;
-
 }
 
 .detail__content .content {
@@ -2144,8 +2142,6 @@ Product Details
     height: 160rem;
   }
 }
-
-
 
 /*
 ======================
@@ -2253,8 +2249,14 @@ Cart Area
   padding-bottom: 5rem;
 }
 
+.cart__form {
+  display: block;
+}
+
 .product__thumbnail img {
   width: 10rem;
+  height: 15rem;
+  object-fit: contain;
 }
 
 .remove__cart-item svg {
@@ -2265,12 +2267,16 @@ Cart Area
 }
 
 .cart__table {
+  display: block;
+  width: 100%;
   margin-bottom: 4rem;
+  overflow-x: auto;
 }
 
 .cart__table .table {
   border-collapse: collapse;
   width: 100%;
+  max-width: 150rem;
 }
 
 .cart__table .table th {
@@ -2283,6 +2289,7 @@ Cart Area
 .cart__table .table td {
   vertical-align: middle;
   padding: 1.8rem 0;
+  white-space: nowrap;
   border-bottom: 1px solid var(--primaryColor);
 }
 

@@ -9,6 +9,7 @@ const lineec = require("gulp-line-ending-corrector");
 const imagemin = require("gulp-imagemin");
 const minify = require("gulp-minify");
 
+// Config
 function style() {
   return gulp
     .src("./*.css")

@@ -28,7 +28,6 @@ navClose.addEventListener("click", () => {
 PopUp
 =============
  */
-
 const popup = document.querySelector(".popup");
 const closePopup = document.querySelector(".popup__close");
 

@@ -1587,16 +1587,21 @@ News Section
   line-height: 2.7rem;
 }
 
-.card__footer a:link,
-.card__footer a:visited {
+.card__footer a button,
+.card__footer a button {
   display: inline-block;
   padding: 1.4rem 4rem;
   border: 1px solid var(--black);
   color: var(--black);
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.card__footer a:hover {
+.card__footer a button:focus {
+  outline: none;
+}
+
+.card__footer a button:hover {
   border: 1px solid var(--black);
   color: var(--white);
   background-color: var(--black);

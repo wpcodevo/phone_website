@@ -58,7 +58,7 @@ function images3() {
 function watch() {
   browserSync.init({
     server: {
-      baseDir: "./dist",
+      baseDir: "./",
     },
   });
 

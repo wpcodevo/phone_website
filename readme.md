@@ -2,8 +2,6 @@
 
 ## Setup
 
----
-
 #### Download [Node.js](https://nodejs.org/en/). Run the following commands:
 
 ```

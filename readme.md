@@ -1,21 +1,5 @@
-# eCommerce Website Template
+# Responsive Ecommerce Website Using HTML CSS JAVASCRIPT
 
-## Setup
+## Video (https://youtu.be/lEarRTKXpGg)
 
-#### Download [Node.js](https://nodejs.org/en/). Run the following commands:
-
-```
-# Install dependencies (Only for first time).
-npm i
-
-# Start server on localhost:3000
-gulp watch
-
-# Build for production in dist/ directory
-- gulp style
-- gulp javascript
-- gulp images
-- gulp images1
-- gulp images2
-- gulp images3
-```
+!["Responsive Ecommerce Website Using HTML CSS JAVASCRIPT"](https://i9.ytimg.com/vi/lEarRTKXpGg/maxresdefault.jpg?time=1605894600000&sqp=CMiD4P0F&rs=AOn4CLBXFCzUGHsfQb_TKvoE7HW5mJLGlg "Responsive Ecommerce Website Using HTML CSS JAVASCRIPT")

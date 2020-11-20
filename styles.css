@@ -486,7 +486,6 @@ Hero Media Query
 }
 
 @media only screen and (max-width: 567px) {
-
   .hero,
   .hero .glide__slides {
     height: 60vh;
@@ -941,7 +940,6 @@ Latest Products Media Query
 }
 
 @media only screen and (max-width: 768px) {
-
   .latest__products .glide__arrow--left,
   .related__products .glide__arrow--left {
     left: 70%;
@@ -2418,7 +2416,6 @@ Cart Area Media Query
 */
 
 @media only screen and (max-width: 1200px) {
-
   .minus-btn,
   .plus-btn {
     padding: 0.6rem 0.8rem;

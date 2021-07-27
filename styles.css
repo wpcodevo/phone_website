@@ -137,7 +137,7 @@ Navigation
 }
 
 .nav__item:not(:last-child) {
-  margin-right: 1.6rem;
+  margin-right: 9.5rem;
 }
 
 .nav__list .nav__link:link,
@@ -363,12 +363,12 @@ Hero Area
 }
 
 .glide__arrow--left {
-  left: 20rem;
+  left: 5rem;
 }
 
 .glide__arrow--right {
   position: absolute;
-  right: 20rem;
+  right: 5rem;
 }
 
 .hero:hover .glide__arrow {
@@ -376,11 +376,11 @@ Hero Area
 }
 
 .hero:hover .glide__arrow--left {
-  left: 23rem;
+  left: 5rem;
 }
 
 .hero:hover .glide__arrow--right {
-  right: 23rem;
+  right: 5rem;
 }
 
 .hero .glide__arrow svg {
@@ -1588,6 +1588,7 @@ News Section
 .card__footer a button,
 .card__footer a button {
   display: inline-block;
+  border-radius: 0.5rem;
   padding: 1.4rem 4rem;
   border: 1px solid var(--black);
   color: var(--black);

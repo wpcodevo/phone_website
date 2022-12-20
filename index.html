@@ -68,29 +68,29 @@
           </div>
 
           <div class="nav__icons">
-            <a href="#" class="icon__item">
+            <a href="#" class="icon__item" id="login-btn">
               <svg class="icon__user">
                 <use xlink:href="./images/sprite.svg#icon-user"></use>
               </svg>
             </a>
 
-            <a href="#" class="icon__item">
+            <a href="#" class="icon__item" id="search-btn">
               <svg class="icon__search">
                 <use xlink:href="./images/sprite.svg#icon-search"></use>
               </svg>
             </a>
 
-            <a href="#" class="icon__item">
+            <a href="#" class="icon__item" id="cart-btn">
               <svg class="icon__cart">
                 <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
               </svg>
-              <span id="cart__total">0</span>
+              <span id="cart__total">3</span>
             </a>
           </div>
         </nav>
       </div>
     </div>
-
+    
     <!-- Hero -->
     <div class="hero">
       <div class="glide" id="glide_1">
@@ -145,6 +145,55 @@
         </div>
       </div>
     </div>
+    <div class="auth">
+      <form action="" class="login-form">
+        <h3>Login Now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="#">Click Here</a></p>
+        <p>don't have an account <a href="#">Create now</a></p>
+        <input type="submit" value="Login now" class="btn">
+      </form>
+      </div>
+      <div class="searchF">
+      <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="Search here..">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+  </div>
+
+    <div class="shopping-cart">
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="images/products/iPhone/iphone1.jpeg">
+            <div class="content">
+                <h3>iPhone</h3>
+                <span class="price">$800.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="images/products/sumsung/samsung3.jpeg">
+            <div class="content">
+                <h3>Samsung A22</h3>
+                <span class="price">$350.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="box">
+            <i class="fas fa-trash"></i>
+            <img src="images/products/headphone/headphone3.jpeg">
+            <div class="content">
+                <h3>Boat</h3>
+                <span class="price">$54.99/-</span>
+                <span class="quantity">qty : 1</span>
+            </div>
+        </div>
+        <div class="total">Total : $1354.69/-</div>
+        <a href="#" class="btn">Check out</a>
+    </div>
+
   </header>
   <!-- End Header -->
 

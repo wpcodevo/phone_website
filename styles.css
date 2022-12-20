@@ -2409,6 +2409,148 @@ Cart Area
   border: 1px solid var(--black);
 }
 
+.auth .login-form{
+  position: absolute;
+  top: 9%; right: -110%;
+  width: 35rem;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  border-radius: .5rem;
+  background-color: #fff;
+  text-align: center;
+}
+.auth .login-form.active{
+  right: 6rem;
+  transition: .4s linear;
+}
+
+.auth .login-form h3{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.auth .login-form .box{
+  width: 100%;
+  margin: .7rem 0;
+  background-color: #eee;
+  border-radius: .5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: var(--black);
+  text-transform: none;
+}
+.auth .login-form p{
+  font-size: 1.4rem;
+  padding: .5rem 0;
+  color: var(--light-color);
+}
+.auth .login-form p a{
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.searchF .search-form{
+  position: absolute;
+  top: 10%; right: -110%;
+  max-width: 50rem;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: .5rem;
+  overflow: hidden;
+  display: flex;
+  box-shadow: var(--box-shadow);
+}
+
+.searchF .search-form.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+.searchF .search-form input{
+  height: 100%;
+  width: 100%;
+  background-color: none;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 0 1.5rem;
+}
+
+.searchF .search-form label{
+  font-size: 2.2rem;
+  padding-right: 1.5rem;
+  padding-top: 1.4rem;
+  color: var(--black);
+  cursor: pointer;
+}
+.searchF .search-form label:hover{
+  color: var(--orange);
+}
+
+.shopping-cart{
+  position: absolute;
+  top: 9%; right: -110%;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+  width: 30rem;
+  background-color: #fff;
+}
+.shopping-cart.active{
+  right: 6rem;
+  transition: .4s linear;
+}
+.shopping-cart .box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.shopping-cart .box img{
+  height: 10rem;
+  width: 10rem;
+}
+
+.shopping-cart .box .fa-trash{
+  font-size: 2rem;
+  position: absolute;
+  top: 50%; right: 2rem;
+  cursor: pointer;
+  color: var(--light-color);
+  transform: translateY(-50%);
+}
+.shopping-cart .box .fa-trash:hover{
+  color: var(--orange);
+}
+
+.shopping-cart .box .content h3{
+  color: var(--black);
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+.shopping-cart .box .content span{
+  color: var(--light-color);
+  font-size: 1.6rem;
+}
+
+.shopping-cart .box .content .quantity{
+  padding-left: 1rem;
+}
+
+.shopping-cart .total{
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color:var(--black);
+}
+.shopping-cart .btn{
+  display: block;
+  text-align: center;
+  margin: 1rem;
+}
+
 /*
 ======================
 Cart Area Media Query

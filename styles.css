@@ -2425,13 +2425,15 @@ Cart Area
 
 .auth .login-form{
   position: absolute;
-  top: 9%; right: -110%;
+  top: 9%; 
+  right: -110%;
   width: 35rem;
   box-shadow: var(--box-shadow);
   padding: 2rem;
   border-radius: .5rem;
   background-color: #fff;
   text-align: center;
+  z-index: 5;
 }
 .auth .login-form.active{
   right: 6rem;
@@ -2466,7 +2468,8 @@ Cart Area
 
 .searchF .search-form{
   position: absolute;
-  top: 10%; right: -110%;
+  top: 9%; 
+  right: -110%;
   max-width: 50rem;
   height: 5rem;
   background-color: #fff;
@@ -2474,6 +2477,7 @@ Cart Area
   overflow: hidden;
   display: flex;
   box-shadow: var(--box-shadow);
+  z-index: 5;
 }
 
 .searchF .search-form.active{
@@ -2509,6 +2513,7 @@ Cart Area
   box-shadow: var(--box-shadow);
   width: 30rem;
   background-color: #fff;
+  z-index: 5;
 }
 .shopping-cart.active{
   right: 6rem;
@@ -2588,4 +2593,22 @@ Cart Area Media Query
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+@media only screen and (max-width: 568px) {
+  .shopping-cart.active {
+      top: 14%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .auth .login-form.active {
+      top: 14%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .searchF .search-form{
+      top: 14%;
+    }
 }

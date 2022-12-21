@@ -41,6 +41,10 @@ input {
   color: var(--black);
 }
 
+body{
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -1069,6 +1073,7 @@ Pop Up
   top: 50%;
   left: 50%;
   width: 90%;
+  max-width: 110rem;
   margin: 0 auto;
   height: 55rem;
   transform: translate(-50%, -50%);
@@ -1231,6 +1236,14 @@ Go Up
 
 .goto-top:hover {
   background-color: var(--black4);
+}
+
+@media only screen and (min-width: 1250px) {
+  /* .hero__left span{} */
+
+  .hero__left h1{
+    font-size: 5rem;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -2511,6 +2524,7 @@ Cart Area
 .shopping-cart .box img{
   height: 10rem;
   width: 10rem;
+  object-fit: contain;
 }
 
 .shopping-cart .box .fa-trash{

@@ -340,6 +340,12 @@ Navigation Media Query
 Hero Area
 ======================
 */
+.hero__img-container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
 .hero,
 .hero .glide__slides {

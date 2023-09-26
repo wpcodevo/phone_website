@@ -34,9 +34,9 @@ html {
   overflow-x: hidden;
 }
 
-body{
+body {
   overflow-x: hidden;
-  padding-right: 17px; /* Add padding to create space for the scroll bar */
+  padding-right: 12px; /* Create space for the scrollbar */
 }
 
 body,
@@ -46,6 +46,51 @@ input {
   font-family: "Archivo", sans-serif;
   color: var(--black);
 }
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h3,
+h4 {
+  font-weight: 500;
+}
+
+/* Rest of your CSS code... */
+
+/* Add the scrollbar styles */
+/* Style the scrollbar */
+body::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+  background-color: var(--primaryColor); /* Match the background color of your content */
+}
+
+/* Style the scrollbar track */
+body::-webkit-scrollbar-track {
+  background-color: var(--primaryColor); /* Match the background color of your content */
+}
+
+/* Style the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+  background-color: var(--black); /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+/* Adjust padding on the right to create space for the scrollbar */
+body {
+  overflow-x: hidden;
+  padding-right: 12px; /* Should match the width of the scrollbar */
+}
+
+/* Rest of your CSS code... */
 
 a {
   text-decoration: none;

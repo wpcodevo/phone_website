@@ -120,3 +120,51 @@ document.querySelector('#search-btn').onclick=()=>{
     login.classList.remove('active');
  
 }
+
+// Chatbot functionality
+(function() {
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbotWindow = document.getElementById('chatbot-window');
+  const chatbotClose = document.getElementById('chatbot-close');
+  const chatbotForm = document.getElementById('chatbot-form');
+  const chatbotInput = document.getElementById('chatbot-input');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+
+  if (chatbotToggle && chatbotWindow && chatbotClose && chatbotForm && chatbotInput && chatbotMessages) {
+    chatbotToggle.addEventListener('click', () => {
+      chatbotWindow.classList.toggle('chatbot-hide');
+    });
+    chatbotClose.addEventListener('click', () => {
+      chatbotWindow.classList.add('chatbot-hide');
+    });
+    chatbotForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = chatbotInput.value.trim();
+      if (!msg) return;
+      appendMessage('user', msg);
+      chatbotInput.value = '';
+      setTimeout(() => {
+        appendMessage('bot', getBotReply(msg));
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }, 600);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    });
+
+    function appendMessage(sender, text) {
+      const div = document.createElement('div');
+      div.className = 'chatbot-message ' + sender;
+      div.textContent = text;
+      chatbotMessages.appendChild(div);
+    }
+
+    function getBotReply(msg) {
+      // Simple dummy replies
+      msg = msg.toLowerCase();
+      if (msg.includes('hello') || msg.includes('hi')) return "Hello! How can I help you today?";
+      if (msg.includes('price')) return "For pricing details, please check our product listings.";
+      if (msg.includes('contact')) return "You can contact us via the Contact section below.";
+      if (msg.includes('help')) return "I'm here to help! Ask me anything about our products or services.";
+      return "Sorry, I didn't understand that. Please try asking something else.";
+    }
+  }
+})();

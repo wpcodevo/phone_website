@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+  .admin-container { max-width: 1250px; margin: 2rem auto; padding: 1rem; }
+  .admin-header { display:flex; flex-direction:column; align-items:center; gap:.75rem; margin-bottom:1.4rem; }
+  .admin-header-bar { width:100%; display:flex; justify-content:space-between; align-items:center; }
+  .admin-header h1 { margin:0; font-size:2.6rem; line-height:1.15; letter-spacing:.5px; text-align:center; }
+  @media (max-width:700px){ .admin-header h1 { font-size:1.9rem; } }
+  .admin-grid { display: grid; grid-template-columns: 380px 1fr; gap: 2rem; align-items: start; }
+    .admin-card { 
+      background: #fff; 
+      padding: 1rem; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    body.darkMode .admin-card {
+      background: var(--dark-card-bg);
+      box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+    }
+    .admin-card h2 { 
+      margin-bottom: 1rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    body.darkMode .admin-card h2 {
+      color: var(--dark-text);
+    }
+    .admin-actions { display:flex; gap: .5rem; }
+    .table-area { position: relative; }
+    .table-toolbar { display:flex; flex-wrap: wrap; gap:.75rem; align-items: center; margin-bottom: .75rem; }
+    .table-toolbar .grow { flex:1 1 240px; }
+    .table-toolbar input[type="search"] { padding: .65rem .85rem; border-radius: 6px; border:1px solid #ccc; background:#fff; font-size: 1.05rem; }
+    body.darkMode .table-toolbar input[type="search"] { background: var(--dark-input-bg); border-color: var(--dark-border); color: var(--dark-text); }
+    .table-toolbar select { max-width: 200px; font-size: 1.05rem; padding: .65rem; }
+    .table-toolbar .meta { font-size:.95rem; opacity:.7; font-weight: 500; }
+    .table-wrapper { max-height: 560px; overflow:auto; border:1px solid #e4e4e4; border-radius: 8px; background:#fff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+    body.darkMode .table-wrapper { background: var(--dark-card-bg); border-color: var(--dark-border); box-shadow: 0 2px 6px rgba(255,255,255,0.05); }
+  table { width:100%; border-collapse: collapse; font-family: 'Archivo', system-ui, sans-serif; }
+    body.darkMode table {
+      background: var(--dark-card-bg);
+    }
+  th, td { border-bottom:1px solid #eee; padding:1rem .95rem; text-align:left; color:#222; font-size:1.3rem; line-height:1.45; transition: background-color .25s ease, color 0.3s ease, border-color 0.3s ease; }
+    body.darkMode th, body.darkMode td {
+      border-bottom-color: var(--dark-border);
+      color: var(--dark-text);
+    }
+  thead th { position: sticky; top:0; z-index: 2; background:#fafafa; font-weight:700; font-size:.9rem; letter-spacing:.09em; text-transform: uppercase; }
+  thead th:nth-child(3) { text-align: right; }
+    body.darkMode thead th { background: var(--dark-bg); }
+  tbody tr { cursor: pointer; }
+  tbody td:nth-child(1) { font-weight:600; font-variant-numeric: tabular-nums; font-size:1.25rem; }
+  tbody td:nth-child(2) { padding: .5rem; }
+  tbody td:nth-child(2) img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; border: 1px solid #eee; }
+  tbody td:nth-child(3) { font-size:1.25rem; font-weight:500; }
+  tbody td:nth-child(4) { font-size:1.2rem; font-weight:500; }
+  tbody td:nth-child(5) { text-align:right; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1, 'lnum' 1; font-weight:600; font-size:1.35rem; color: var(--orange); }
+  tbody td:nth-child(6) { text-align:center; font-weight:600; font-size:1.2rem; }
+  tbody td:nth-child(6).low-stock { color: #ff6b35; }
+  tbody td:nth-child(6).out-of-stock { color: #d32f2f; }
+  tbody td:nth-child(7) { font-size:1.15rem; }
+  tbody td:nth-child(8) { text-align:center; }
+  tbody td:nth-child(8) .status-badge { 
+    padding: .3rem .6rem; 
+    border-radius: 14px; 
+    font-size: .8rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+  }
+  tbody td:nth-child(8) .status-active { background: #e8f5e8; color: #2e7d32; }
+  tbody td:nth-child(8) .status-inactive { background: #fff3e0; color: #f57c00; }
+  tbody td:nth-child(8) .status-discontinued { background: #ffebee; color: #d32f2f; }
+  body.darkMode tbody td:nth-child(8) .status-active { background: rgba(46, 125, 50, 0.2); color: #81c784; }
+  body.darkMode tbody td:nth-child(8) .status-inactive { background: rgba(245, 124, 0, 0.2); color: #ffb74d; }
+  body.darkMode tbody td:nth-child(8) .status-discontinued { background: rgba(211, 47, 47, 0.2); color: #e57373; }
+  tbody td.actions-cell { padding:.45rem .6rem; }
+  tbody td.actions-cell .actions { display:flex; gap:.4rem; align-items:center; flex-wrap: wrap; }
+  tbody td.actions-cell button { min-width:54px; font-size:.7rem; padding:.45rem .55rem; line-height:1; }
+  tbody td.actions-cell button.edit { background: var(--orange); }
+  tbody td.actions-cell button.delete { background:#b12727; }
+  tbody td.actions-cell button.delete.secondary { background:#b12727; }
+  body.darkMode tbody td.actions-cell button.delete { background:#d13b3b; }
+    tbody tr:nth-child(odd) { background: #fcfcfc; }
+    body.darkMode tbody tr:nth-child(odd) { background: rgba(255,255,255,0.03); }
+    tbody tr:hover { background:#fff4e6; }
+    body.darkMode tbody tr:hover { background: rgba(255,140,0,0.15); }
+    tbody tr.selected { outline:2px solid var(--orange); outline-offset:-2px; background:#fff0d9 !important; }
+    body.darkMode tbody tr.selected { background: rgba(255,140,0,0.25) !important; }
+    .empty-state { text-align:center; padding:2.5rem 1rem; color:#777; font-size:.95rem; }
+    body.darkMode .empty-state { color: var(--dark-text-dim, #aaa); }
+    input, select, textarea { 
+      width: 100%; 
+      padding: .9rem; 
+      margin: .4rem 0; 
+      border: 1px solid #ddd; 
+      border-radius: 6px;
+      background: #fff;
+      color: #333;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      resize: vertical;
+      min-height: 48px;
+    }
+    body.darkMode input, body.darkMode select {
+      background: var(--dark-input-bg);
+      border-color: var(--dark-border);
+      color: var(--dark-text);
+    }
+    label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: .3rem;
+    }
+    body.darkMode label {
+      color: var(--dark-text);
+    }
+    button { padding: .8rem 1.2rem; border: none; background: var(--orange); color: #fff; border-radius: 6px; cursor: pointer; font-size: 1.05rem; font-weight: 500; }
+    button.secondary { background: #222; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <div class="admin-header-bar" style="margin:2.5rem 0 1.5rem; text-align:center;">
+        <div style="flex:1"></div>
+        <div style="display:flex; align-items:center; gap:1rem; justify-content:center; width:100%; flex-wrap:wrap;">
+          <a href="/" class="btn-auth" style="width:auto; display:inline-flex; align-items:center; gap:.5rem; padding:1rem 2rem; text-decoration:none;">
+            <span style="font-size:1.8rem;">&#8962;</span>
+            <span>Home</span>
+          </a>
+        </div>
+        <div style="flex:1"></div>
+      </div>
+      <h1>Admin Dashboard</h1>
+    </div>
+
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h2>Create / Edit Product</h2>
+        <form id="productForm">
+          <label>ID</label>
+          <input type="number" name="id" id="p_id" required />
+          <label>Title</label>
+          <input type="text" name="title" id="p_title" required />
+          <label>Brand</label>
+          <input type="text" name="brand" id="p_brand" placeholder="e.g. Apple, Samsung, Sony" />
+          <label>Image</label>
+          <input type="file" accept="image/*" id="p_image_file" />
+          <input type="hidden" id="p_image" name="image" />
+          <div id="imagePreview" style="margin-top:.5rem; display:none;">
+            <img id="imagePreviewImg" src="" alt="Preview" style="max-width:100%; border:1px solid #ddd; border-radius:6px;" />
+          </div>
+          <label>Price ($)</label>
+          <input type="number" step="0.01" name="price" id="p_price" required />
+          <label>Stock Quantity</label>
+          <input type="number" name="stock" id="p_stock" min="0" placeholder="Available quantity" />
+          <label>Description</label>
+          <textarea name="description" id="p_description" rows="4" placeholder="Short product description"></textarea>
+          <label>Colors (comma-separated)</label>
+          <input type="text" name="colors" id="p_colors" placeholder="e.g. Black, White, Red, Blue" />
+          <label>Storage Options (comma-separated)</label>
+          <input type="text" name="storage_options" id="p_storage" placeholder="e.g. 64GB, 128GB, 256GB" />
+          <label>Specs</label>
+          <textarea name="specs" id="p_specs" rows="6" placeholder="e.g. RAM: 4GB
+Storage: 64GB
+Display: 6.1 inch
+Camera: 12MP
+Battery: 3110mAh
+OS: iOS 15"></textarea>
+          <label>Category</label>
+          <select id="p_category" name="category">
+            <option>All Products</option>
+            <option>Featured Products</option>
+            <option>Trending Products</option>
+            <option>Special Products</option>
+          </select>
+          <label>Status</label>
+          <select id="p_status" name="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="discontinued">Discontinued</option>
+          </select>
+          <div class="admin-actions">
+            <button type="submit">Save Product</button>
+            <button type="button" id="resetForm" class="secondary">Reset Form</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="admin-card table-area">
+        <h2 style="margin-bottom:.75rem;">Products</h2>
+        <div class="table-toolbar">
+          <input type="search" id="productSearch" placeholder="Search products..." class="grow" />
+          <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option>All Products</option>
+            <option>Featured Products</option>
+            <option>Trending Products</option>
+            <option>Special Products</option>
+          </select>
+          {% include 'includes/export_controls.html' %}
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th style="width:140px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+          <div id="emptyState" class="empty-state" style="display:none;">No products found.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-/FZ4J0C0uohsEiL41Z8nfdXbra+XUl3t4mV9Ezg4QPGVE3d2rYZRk5v0zzakDx4zY/boYYGr2susx1bwyodK+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js" integrity="sha512-RMyoYkTmB1HpUG+oa7bDo9g0wMuELyhf1DWnLpzHwAvlPK4tObhKmL6syGk1S8GEpispnlTKUQ98GqA+PJkGVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/static/js/darkmode.js"></script>
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+    .dash-container { max-width: 1100px; margin: 2rem auto; padding: 1rem; }
+    .dash-card { 
+      background: #fff; 
+      padding: 1.5rem; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    body.darkMode .dash-card {
+      background: var(--dark-card-bg);
+      box-shadow: 0 2px 12px rgba(255,255,255,0.1);
+    }
+    .dash-card h1 { 
+      margin-bottom: .5rem;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    body.darkMode .dash-card h1 {
+      color: var(--dark-text);
+    }
+    .dash-card p {
+      color: #666;
+      transition: color 0.3s ease;
+    }
+    body.darkMode .dash-card p {
+      color: var(--dark-text-muted);
+    }
+    .dash-actions { margin-top: 1.5rem; display:flex; gap: .75rem; flex-wrap: wrap; }
+    .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.2rem; border:none; border-radius:6px; background: var(--orange); color:#fff; text-decoration:none; cursor:pointer; }
+    .btn.secondary { background:#222; }
+  </style>
+</head>
+<body>
+  <div class="dash-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <h2 style="margin: 0;">User Dashboard</h2>
+    </div>
+    <div class="dash-card">
+      <h1>Welcome</h1>
+      <p>This is your dashboard. Explore products, view your cart, and manage your account.</p>
+      <div class="dash-actions">
+        <a class="btn" href="/">Go to Store</a>
+        <a class="btn secondary" href="/cart/">View Cart</a>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/darkmode.js"></script>
+  <script src="/static/js/global.js"></script>
+</body>
+</html>

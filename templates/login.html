@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Phone Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .auth-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        body.darkMode .auth-container {
+            background-color: var(--dark-card-bg);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        body.darkMode .auth-container h2 {
+            color: var(--dark-text);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        body.darkMode .form-group label {
+            color: var(--dark-text);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body.darkMode .form-group input {
+            background-color: var(--dark-input-bg);
+            border-color: var(--dark-border);
+            color: var(--dark-text);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+        
+        body.darkMode .auth-tabs {
+            border-bottom-color: var(--dark-border);
+        }
+        
+        .auth-tab {
+            padding: 1rem 0;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        body.darkMode .auth-tab {
+            color: var(--dark-text-muted);
+        }
+        
+        .auth-tab.active {
+            color: var(--orange);
+            border-color: var(--orange);
+        }
+        
+        .auth-form {
+            display: none;
+        }
+        
+        .auth-form.active {
+            display: block;
+        }
+        
+        .btn-auth {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: var(--orange);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-auth:hover {
+            background-color: #c10020;
+        }
+        
+        .auth-links {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .auth-links a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .auth-error {
+            color: red;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+            font-size: 1.4rem;
+        }
+        
+        .success-message {
+            color: green;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div style="margin:2.5rem 0 1.5rem; text-align:center; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="{{ url_for('index') }}" class="btn-auth" style="width:auto; display:inline-flex; align-items:center; gap:.5rem; padding:1rem 2rem; text-decoration:none;">
+                <span style="font-size:1.8rem;">&#8962;</span>
+                <span>Home</span>
+            </a>
+        </div>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <span id="loginTab" class="auth-tab active">Login</span>
+                <span id="registerTab" class="auth-tab">Register</span>
+            </div>
+
+            <div class="auth-content">
+                <form id="loginForm" class="auth-form active">
+                    <h2>Login</h2>
+                    <div class="auth-error" id="loginError"></div>
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Login</button>
+                    <div class="auth-links">
+                        <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+                    </div>
+                </form>
+
+                <form id="registerForm" class="auth-form">
+                    <h2>Create an Account</h2>
+                    <div class="auth-error" id="registerError"></div>
+                    <div class="success-message" id="registerSuccess"></div>
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input type="email" id="registerEmail" name="email" autocomplete="email" required>                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="password" autocomplete="new-password" required>                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required>                    </div>
+                    <button type="submit" class="btn-auth">Create Account</button>
+                    
+                    <div class="auth-links">
+                        <a href="#" id="loginTabLink">Already have an account? Login here</a>
+                    </div>
+                </form>
+                
+                <form id="forgotPasswordForm" class="auth-form">
+                    <h2>Reset Your Password</h2>
+                    <div class="auth-error" id="forgotPasswordError"></div>
+                    <div class="success-message" id="forgotPasswordSuccess"></div>
+                    
+                    <div class="form-group">
+                        <label for="forgotPasswordEmail">Email Address</label>
+                        <input type="email" id="forgotPasswordEmail" name="email" autocomplete="email" required>                        <div class="error-message" id="forgotPasswordEmailError">Please enter a valid email address</div>
+                    </div>
+                    <button type="submit" class="btn-auth">Reset Password</button>
+                    
+                    <div class="auth-links">
+                        <a href="#" id="backToLoginLink">Back to Login</a>
+                    </div>
+                </form>
+
+                <!-- OTP Verification Form -->
+                <form id="otpVerifyForm" class="auth-form">
+                    <h2>Enter Verification Code</h2>
+                    <div class="auth-error" id="otpVerifyError"></div>
+                    <div class="success-message" id="otpVerifySuccess"></div>
+                    <div class="form-group">
+                        <label>Email sent to</label>
+                        <div id="otpEmailDisplay" style="font-weight:600; font-size:1.4rem; word-break:break-all;"></div>
+                        <input type="hidden" id="otpEmail" name="otpEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="otpCode">Verification Code</label>
+                        <input type="text" id="otpCode" name="otpCode" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" autocomplete="one-time-code" required>
+                        <small id="otpCountdown" style="display:block; margin-top:0.5rem; font-size:1.2rem; color: var(--blue);">Resend available in 60s</small>
+                    </div>
+                    <button type="submit" class="btn-auth">Verify Code</button>
+                    <div class="auth-links" style="margin-top:1rem; display:flex; justify-content:space-between; align-items:center;">
+                        <a href="#" id="resendOtpLink" style="opacity:0.5; pointer-events:none;">Resend Code</a>
+                        <a href="#" id="otpBackToLoginLink">Back to Login</a>
+                    </div>
+                </form>
+
+                <form id="resetPasswordForm" class="auth-form">
+                    <h2>Reset Password</h2>
+                    <div class="auth-error" id="resetPasswordError"></div>
+                    <div class="success-message" id="resetPasswordSuccess"></div>
+                    <input type="hidden" id="resetEmail" name="resetEmail">
+                    <div class="form-group">
+                        <label for="resetNewPassword">New Password</label>
+                        <input type="password" id="resetNewPassword" name="resetNewPassword" autocomplete="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resetConfirmNewPassword">Confirm New Password</label>
+                        <input type="password" id="resetConfirmNewPassword" name="resetConfirmNewPassword" autocomplete="new-password" required>
+                    </div>
+                    <button type="submit" class="btn-auth">Reset Password</button>
+                    <div class="auth-links">
+                        <a href="#" id="backToLoginFromResetLink">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+    <!-- Dark mode removed on login page -->
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+</body>
+</html>
+{% block scripts %}
+<script src="/static/js/darkmode.js"></script>
+<script src="/static/js/auth.js"></script>
+{% endblock %}

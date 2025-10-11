@@ -2,184 +2,238 @@
     "products": [{
             "id": 6,
             "title": "Apple iPhone 11",
-            "image": "./images/products/iphone/iphone3.jpeg",
+            "image": "./static/images/products/iphone/iphone3.jpeg",
             "price": 760,
-            "category": "Featured Products"
+            "category": "Mobile phone"
         },
 
         {
             "id": 3,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone2.jpeg",
+            "image": "./static/images/products/headphone/headphone2.jpeg",
             "price": 265,
-            "category": "Special Products"
+            "category": "Headphone"
         },
         {
             "id": 4,
             "title": "Apple iPhone 11",
-            "image": "./images/products/iphone/iphone2.jpeg",
+            "image": "./static/images/products/iphone/iphone2.jpeg",
             "price": 850,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 8,
             "title": "Apple iPhone 11",
-            "image": "./images/products/iphone/iphone4.jpeg",
+            "image": "./static/images/products/iphone/iphone4.jpeg",
             "price": 290,
-            "category": "Featured Products"
+            "category": "Mobile phone"
         },
         {
             "id": 5,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone3.jpeg",
+            "image": "./static/images/products/headphone/headphone3.jpeg",
             "price": 250,
-            "category": "Special Products"
+            "category": "Headphone"
         },
 
         {
             "id": 7,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone4.jpeg",
+            "image": "./static/images/products/headphone/headphone4.jpeg",
             "price": 365,
-            "category": "Featured Products"
+            "category": "Headphone"
         },
 
 
         {
             "id": 10,
             "title": "Apple iPhone 11 Pro",
-            "image": "./images/products/iphone/iphone5.jpeg",
+            "image": "./static/images/products/iphone/iphone5.jpeg",
             "price": 385,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 11,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone6.jpeg",
+            "image": "./static/images/products/headphone/headphone6.jpeg",
             "price": 475,
-            "category": "Special Products"
+            "category": "Headphone"
         },
         {
             "id": 13,
             "title": "Apple iPhone 11",
-            "image": "./images/products/iphone/iphone6.jpeg",
+            "image": "./static/images/products/iphone/iphone6.jpeg",
             "price": 800,
-            "category": "Trending Products"
+            "category": "Mobile phone"
         },
         {
             "id": 12,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone7.jpeg",
+            "image": "./static/images/products/headphone/headphone7.jpeg",
             "price": 850,
-            "category": "Special Products"
+            "category": "Headphone"
         },
 
         {
             "id": 14,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone7.jpeg",
+            "image": "./static/images/products/headphone/headphone7.jpeg",
             "price": 360,
-            "category": "Trending Products"
+            "category": "Headphone"
         },
         {
             "id": 9,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone5.jpeg",
+            "image": "./static/images/products/headphone/headphone5.jpeg",
             "price": 320,
-            "category": "Special Products"
+            "category": "Headphone"
         },
+        {
+            "id": 37,
+            "title": "Samsung 16” Galaxy Book5 Pro",
+            "image": "./static/images/products/laptop/laptop30.jpg",
+            "price": 1349,
+            "category": "Laptops"
+            },
         {
             "id": 15,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone8.jpeg",
+            "image": "./static/images/products/headphone/headphone8.jpeg",
             "price": 305,
-            "category": "Trending Products"
+            "category": "Headphone"
         },
         {
             "id": 16,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung6.jpeg",
+            "image": "./static/images/products/sumsung/samsung6.jpeg",
             "price": 400,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 17,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung5.jpeg",
+            "image": "./static/images/products/sumsung/samsung5.jpeg",
             "price": 550,
-            "category": "Trending Products"
+            "category": "Mobile phone"
         },
+        {
+            "id": 34,
+            "title": "MSI Katana 15",
+            "image": "./static/images/products/laptop/laptop27.jpeg",
+            "price": 1499,
+            "category": "Laptops"
+            },
         {
             "id": 2,
             "title": "Apple iPhone 11",
-            "image": "./images/products/iphone/iphone1.jpeg",
+            "image": "./static/images/products/iphone/iphone1.jpeg",
             "price": 300,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 18,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone9.jpeg",
+            "image": "./static/images/products/headphone/headphone9.jpeg",
             "price": 630,
-            "category": "Trending Products"
+            "category": "Headphone"
         },
+              {
+            "id": 31,
+            "title": "Apple MacBook Air (MGN63PA/A)",
+            "image": "./static/images/products/laptop/laptop24.jpg",
+            "price": 2000,
+            "category": "Laptops"
+},
         {
             "id": 20,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung4.jpeg",
+            "image": "./static/images/products/sumsung/samsung4.jpeg",
             "price": 270,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 19,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone10.jpeg",
+            "image": "./static/images/products/headphone/headphone10.jpeg",
             "price": 250,
-            "category": "Trending Products"
+            "category": "Headphone"
         },
+                    {
+            "id": 35,
+            "title": "HP 14 Laptop",
+            "image": "./static/images/products/laptop/laptop28.jpg",
+            "price": 172,
+            "category": "Laptops"
+            },
         {
             "id": 1,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone1.jpeg",
+            "image": "./static/images/products/headphone/headphone1.jpeg",
             "price": 265,
-            "category": "Special Products"
+            "category": "Headphone"
         },
         {
             "id": 24,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung2.jpeg",
+            "image": "./static/images/products/sumsung/samsung2.jpeg",
             "price": 500,
-            "category": "Featured Products"
+            "category": "Mobile phone"
         },
+                    {
+            "id": 32,
+            "title": "ASUS ROG Strix G16",
+            "image": "./static/images/products/laptop/laptop25.jpeg",
+            "price": 2099,
+            "category": "Laptops"
+            },
         {
             "id": 21,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone11.jpeg",
+            "image": "./static/images/products/headphone/headphone11.jpeg",
             "price": 700,
-            "category": "Trending Products"
+            "category": "Headphone"
         },
+
+                    {
+            "id": 33,
+            "title": "Acer Nitro V Gaming Laptop",
+            "image": "./static/images/products/laptop/laptop26.jpg",
+            "price": 849,
+            "category": "Laptops"
+            },
+
 
         {
             "id": 25,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung1.jpeg",
+            "image": "./static/images/products/sumsung/samsung1.jpeg",
             "price": 450,
-            "category": "Special Products"
+            "category": "Mobile phone"
         },
         {
             "id": 22,
             "title": "Samsung Galaxy",
-            "image": "./images/products/sumsung/samsung3.jpeg",
+            "image": "./static/images/products/sumsung/samsung3.jpeg",
             "price": 460,
-            "category": "Trending Products"
+            "category": "Mobile phone"
         },
         {
             "id": 23,
             "title": "Sony WH-CH510",
-            "image": "./images/products/headphone/headphone12.jpeg",
+            "image": "./static/images/products/headphone/headphone12.jpeg",
             "price": 600,
-            "category": "Featured Products"
-        }
+            "category": "Headphone"
+        },
+
+{
+  "id": 36,
+  "title": "Dell Latitude 3190",
+  "image": "./static/images/products/laptop/laptop29.jpg",
+  "price": 164,
+  "category": "Laptops"
+}
+
+
 
     ]
 }
